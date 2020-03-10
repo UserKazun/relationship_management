@@ -6,7 +6,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
     return Center(
       child: Container(
         child: Text(
-          'Home',
+          'PrivacyPolicy ...',
           style: TextStyle(
             fontWeight: FontWeight.w900,
             fontSize: 20

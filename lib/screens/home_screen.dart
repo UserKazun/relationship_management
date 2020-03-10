@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HowToUseScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
         child: Text(
-          'How to use ...',
+          'Home ...',
           style: TextStyle(
             fontWeight: FontWeight.w900,
             fontSize: 20
@@ -16,3 +16,4 @@ class HowToUseScreen extends StatelessWidget {
     );
   }
 }
+

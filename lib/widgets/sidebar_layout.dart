@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import './sidebar.dart';
+import '../screens/privacy_policy_screen.dart';
 
-class SideBarlayout extends StatelessWidget {
+class SideBarLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        HomePage(),
+        PrivacyPolicyScreen(),
         SideBar(),
       ],
     );

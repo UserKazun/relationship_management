@@ -8,4 +8,3 @@ class MyApp extends StatelessWidget {
     return null;
   }
 }
-

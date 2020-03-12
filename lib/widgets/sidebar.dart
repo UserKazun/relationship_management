@@ -60,7 +60,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           top: 0,
           bottom: 0,
           left: isSidebarOpenedAsync.data ? 0 : 0,
-          right: isSidebarOpenedAsync.data ? 0 : screenWidth - 45,
+          right: isSidebarOpenedAsync.data ? 100 : screenWidth - 35,
           child: Row(
             children: <Widget>[
               Expanded(
@@ -74,16 +74,19 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   onTap: () {
                     onIconPressed();
                   },
-                  child: Container(
-                    width: 35,
-                    height: 110,
-                    color: Color(0xFF262AAA),
-                    alignment: Alignment.centerLeft,
-                    child: AnimatedIcon(
-                      progress: _animationController.view,
-                      icon: AnimatedIcons.menu_close,
-                      color: Color(0xFF1BB5FD),
-                      size: 25,
+                  child: ClipPath(
+                    clipper: CustomMenuClipper(),
+                    child: Container(
+                      width: 35,
+                      height: 110,
+                      color: Color(0xFF262AAA),
+                      alignment: Alignment.centerLeft,
+                      child: AnimatedIcon(
+                        progress: _animationController.view,
+                        icon: AnimatedIcons.menu_close,
+                        color: Color(0xFF1BB5FD),
+                        size: 25,
+                      ),
                     ),
                   ),
                 ),
@@ -96,3 +99,28 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
   }
 }
 
+class CustomMenuClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Paint paint = Paint();
+    paint.color = Colors.white;
+
+    final width = size.width;
+    final height = size.height;
+
+    Path path = Path();
+    path.moveTo(0, 0);
+    path.quadraticBezierTo(0, 8, 10, 16);
+    path.quadraticBezierTo(width-1, height/2-20, width, height/2);
+    path.quadraticBezierTo(width+1, height/2+20, 10, height-16);
+    path.quadraticBezierTo(0, height - 8, 0, height);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
+  }
+}

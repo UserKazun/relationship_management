@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../widgets/sidebar_menu.dart';
+
 class SideBar extends StatefulWidget {
   @override
   _SideBarState createState() => _SideBarState();
@@ -59,13 +61,38 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           duration: _animationDuration,
           top: 0,
           bottom: 0,
-          left: isSidebarOpenedAsync.data ? 0 : 0,
+          left: isSidebarOpenedAsync.data ? 0 : -screenWidth,
           right: isSidebarOpenedAsync.data ? 100 : screenWidth - 35,
           child: Row(
             children: <Widget>[
               Expanded(
                 child: Container(
-                  color: Color(0xFF262AAA),
+                  color: const Color(0xFF262AAA),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(height: 50),
+                      SidebarMenu(
+                        icon: Icons.home,
+                        title: 'Home',
+                      ),
+                      Divider(
+                        height: 64,
+                        thickness: 0.5,
+                        color: Colors.white.withOpacity(0.3),
+                        indent: 14,
+                        endIndent: 14,
+                      ),
+                      SidebarMenu(
+                        icon: Icons.public,
+                        title: 'Privacy policy',
+                      ),
+                      //Spacer(),
+                      SidebarMenu(
+                        icon: Icons.pan_tool,
+                        title: 'How to use',
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Align(

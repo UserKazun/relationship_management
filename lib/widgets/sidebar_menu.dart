@@ -1,39 +1,32 @@
 import 'package:flutter/material.dart';
 
 class SidebarMenu extends StatelessWidget {
+  final IconData icon;
+  final String title;
+
+  const SidebarMenu({Key key, this.icon, this.title}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              'Face ID',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            icon,
+            color: Colors.cyan,
+            size: 30,
+          ),
+          SizedBox(width: 20,),
+          Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.w300,
+              fontSize: 26,
+              color: Colors.white,
             ),
-            SizedBox(height: 20),
-            Text(
-              'Privacy policy',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'How to use',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Logout',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-            SizedBox(height: 50),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -6,7 +6,7 @@ class HowToUseScreen extends StatelessWidget {
     return Center(
       child: Container(
         child: Text(
-          'How to use ...',
+          'How to use',
           style: TextStyle(
             fontWeight: FontWeight.w900,
             fontSize: 20

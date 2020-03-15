@@ -91,6 +91,17 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         icon: Icons.pan_tool,
                         title: 'How to use',
                       ),
+                      Divider(
+                        height: 64,
+                        thickness: 0.5,
+                        color: Colors.white.withOpacity(0.3),
+                        indent: 14,
+                        endIndent: 14,
+                      ),
+                      SidebarMenu(
+                        icon: Icons.settings,
+                        title: 'Settings',
+                      ),
                     ],
                   ),
                 ),

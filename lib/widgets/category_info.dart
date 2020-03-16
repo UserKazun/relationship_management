@@ -8,7 +8,7 @@ class CategoryInfo extends StatelessWidget {
       child: Container(
         width: 370,
         height: 120,
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.blueGrey.withOpacity(0.2),
         child: Column(
           children: <Widget>[
             Container(
@@ -37,7 +37,7 @@ class CategoryInfo extends StatelessWidget {
               child: Text('15 people',
                 style: TextStyle(
                   fontSize: 40,
-                  color: Colors.white,
+                  color: const Color(0xFF262AAA),
                 ),
               ),
             ),

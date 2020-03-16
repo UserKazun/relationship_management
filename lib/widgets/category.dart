@@ -17,7 +17,7 @@ class Category extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontSize: 24,
-                color: Colors.white
+                color: const Color(0xFF262AAA),
               ),
             ),
           ],

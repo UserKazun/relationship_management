@@ -17,4 +17,3 @@ class SideBarLayout extends StatelessWidget {
     );
   }
 }
-

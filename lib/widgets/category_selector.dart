@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'category.dart';
 
-class Categories extends StatelessWidget {
+class CategorySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

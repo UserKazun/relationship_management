@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF262AAA),
+      color: Colors.white,
       child: Row(
         children: <Widget>[
           Expanded(
@@ -20,7 +20,6 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 35,
-                    color: Colors.white
                   ),
                 ),
                 CategoryInfo(),

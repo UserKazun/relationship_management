@@ -6,9 +6,9 @@ class CategoryInfo extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: Container(
-        width: 350,
+        width: 370,
         height: 120,
-        color: Colors.grey.withOpacity(0.2),
+        color: Colors.blueGrey.withOpacity(0.1),
         child: Column(
           children: <Widget>[
             Container(
@@ -33,7 +33,7 @@ class CategoryInfo extends StatelessWidget {
             ),
             //SizedBox(height: 30, width: 30),
             Container(
-              padding: EdgeInsets.only(top: 10, right: 148),
+              padding: EdgeInsets.only(top: 10, right: 170),
               child: Text('15 people',
                 style: TextStyle(
                   fontSize: 40,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/category_info.dart';
+import '../widgets/categories.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               CategoryInfo(),
+              Categories(),
             ],
           ),
         ),

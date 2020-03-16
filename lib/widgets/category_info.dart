@@ -7,31 +7,37 @@ class CategoryInfo extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Container(
         width: 350,
-        height: 150,
+        height: 120,
         color: Colors.grey.withOpacity(0.2),
-        child: Row(
+        child: Column(
           children: <Widget>[
-            Flexible(
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    Text('All',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 32,
-                          color: Colors.blue
-                      ),
+            Container(
+              padding: EdgeInsets.only(left: 10, top: 10),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.person,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 5),
+                  Text('All',
+                    // textAlign: TextAlign.start,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 32,
+                        color: Colors.grey,
                     ),
-                    SizedBox(height: 70, width: 50),
-                    Text('15 people',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 32,
-                          color: Colors.blue
-                      ),
-                    ),
-                  ],
+                  ),
+                ],
+              ),
+            ),
+            //SizedBox(height: 30, width: 30),
+            Container(
+              padding: EdgeInsets.only(top: 10, right: 148),
+              child: Text('15 people',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: const Color(0xFF262AAA),
                 ),
               ),
             ),

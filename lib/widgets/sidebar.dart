@@ -67,7 +67,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
             children: <Widget>[
               Expanded(
                 child: Container(
-                  color: const Color(0xFF262AAA),
+                  color: const Color(0xFF33368A),
                   child: Column(
                     children: <Widget>[
                       SizedBox(height: 50),
@@ -117,7 +117,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                     child: Container(
                       width: 35,
                       height: 110,
-                      color: const Color(0xFF262AAA),
+                      color: const Color(0xFF33368A),
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(
                         progress: _animationController.view,

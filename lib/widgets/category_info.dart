@@ -8,7 +8,7 @@ class CategoryInfo extends StatelessWidget {
       child: Container(
         width: 370,
         height: 120,
-        color: Colors.blueGrey.withOpacity(0.2),
+        color: Color(0xFFE4DAD2).withOpacity(0.4),
         child: Column(
           children: <Widget>[
             Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:relationship_management/widgets/All_relationships.dart';
 import 'package:relationship_management/widgets/favorite_relationships.dart';
-
-import '../widgets/category_selector.dart';
+import 'package:relationship_management/widgets/category_selector.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: <Widget>[
                   FavoriteRelationships(),
-                  //AllRelationships(),
+                  AllRelationships(),
                 ],
               ),
             ),

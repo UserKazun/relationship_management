@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import './widgets/sidebar_layout.dart';
+import 'package:relationship_management/screens/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,12 +7,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Relationship Management',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primaryColor: Colors.white,
+        primaryColor: Color(0xFFFE672E),
+        accentColor: Color(0xFFFEE0D5),
       ),
-      home: SideBarLayout(),
+      home: HomeScreen(),
     );
   }
 }

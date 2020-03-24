@@ -19,22 +19,34 @@ class AllRelationships extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return Row(
                 children: <Widget>[
-                  CircleAvatar(
-                    radius: 35.0,
-                    backgroundImage: AssetImage(favorites[index].imageUrl),
+                  Row(
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 35.0,
+                        backgroundImage: AssetImage(favorites[index].imageUrl),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                              persons[index].name,
+                            style: TextStyle(
+                              color: Colors.blueGrey,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.w600
+                            ),
+                          ),
+                          Text(
+                            persons[index].birthday,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   Column(
                     children: <Widget>[
                       Text(
-                          persons[index].name,
-                        style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 26.0,
-                          fontWeight: FontWeight.w600
-                        ),
-                      ),
-                      Text(
-                        persons[index].birthday,
+                        persons[index].hobby
                       ),
                     ],
                   ),

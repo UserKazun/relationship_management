@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/persons_model.dart';
+import '../models/persons.dart';
 
 class AllRelationships extends StatelessWidget {
   @override

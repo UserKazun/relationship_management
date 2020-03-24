@@ -1,4 +1,4 @@
-import 'person_model.dart';
+import 'person.dart';
 
 final Person currentPerson = Person(
     id: 0,

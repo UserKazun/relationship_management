@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:relationship_management/models/persons_model.dart';
+import 'package:relationship_management/models/persons.dart';
 
 class FavoriteRelationships extends StatelessWidget {
   @override

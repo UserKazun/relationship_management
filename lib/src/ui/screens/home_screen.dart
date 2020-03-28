@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:relationship_management/widgets/All_relationships.dart';
-import 'package:relationship_management/widgets/favorite_relationships.dart';
-import 'package:relationship_management/widgets/category_selector.dart';
+import 'package:relationship_management/src/ui/widgets/All_relationships.dart';
+import 'package:relationship_management/src/ui/widgets/category_selector.dart';
+import 'package:relationship_management/src/ui/widgets/favorite_relationships.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

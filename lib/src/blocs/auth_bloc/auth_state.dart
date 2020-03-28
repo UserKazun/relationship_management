@@ -10,6 +10,7 @@ class AuthInitialState extends AuthState {
   List<Object> get props => null;
 }
 
+// ignore: must_be_immutable
 class AuthenticatedState extends AuthState {
   FirebaseUser user;
 

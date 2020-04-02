@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relationship_management/src/ui/screens/home_screen.dart';
 import 'package:relationship_management/src/ui/screens/splash_screen.dart';
 
 class App extends StatelessWidget {
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
         primaryColor: Color(0xFFFE672E),
         accentColor: Color(0xFFFEE0D5),
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }

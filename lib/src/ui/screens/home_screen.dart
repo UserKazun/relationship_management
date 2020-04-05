@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String home = 'home';
+  final String uid;
+
+  HomeScreen(this.uid);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +42,17 @@ class HomeScreen extends StatelessWidget {
               color: Theme.of(context).accentColor,
               icon: Icon(Icons.menu),
               onPressed: () {
-                Navigator.of(context).pushNamed(MenuScreen.menu);
+                Navigator.of(context).pushNamed(MenuScreen.routeName);
               },
             ),
           ),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          // Navigator.of(context).pushNamed(routeName)
+        },
       ),
     );
   }

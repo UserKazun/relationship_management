@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:relationship_management/src/services/auth.dart';
+import 'package:relationship_management/src/ui/screens/login_screen.dart';
 
 class MenuScreen extends StatelessWidget {
-  static const String menu = '/menu';
+  static const String routeName = '/menu';
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +55,14 @@ void _showSignOutDialog(BuildContext context) {
             CupertinoDialogAction(
               child: Text('戻る'),
               onPressed: () {
-
+                Navigator.of(context).pop();
               },
             ),
             CupertinoDialogAction(
               child: Text('ログアウト'),
               onPressed: () {
-
+                Auth.signOut();
+                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
               },
             ),
           ],

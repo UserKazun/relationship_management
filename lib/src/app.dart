@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
-import 'package:relationship_management/src/ui/screens/splash_screen.dart';
+import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 
 class App extends StatelessWidget {
   @override
@@ -9,10 +9,13 @@ class App extends StatelessWidget {
       title: 'Relationship Management',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFFFE672E),
+        primaryColor: Color(0xFF369FFF),
         accentColor: Color(0xFFFEE0D5),
       ),
       home: HomeScreen(),
+      routes: {
+        MenuScreen.menu: (_) => MenuScreen()
+      },
     );
   }
 }

@@ -7,13 +7,13 @@ class CategorySelector extends StatefulWidget {
 
 class _CategorySelectorState extends State<CategorySelector> {
   int selectedIndex = 0;
-  final List<String> categories = ['All', 'Latest', 'Favorite', 'Job', 'Private'];
+  final List<String> categories = ['全て', '最近', 'お気に入り', '仕事', 'プライベート'];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90.0,
-      color: Theme.of(context).primaryColor,
+      height: 50.0,
+      // color: Theme.of(context).primaryColor,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -26,16 +26,16 @@ class _CategorySelectorState extends State<CategorySelector> {
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                  vertical: 30.0
+                  horizontal: 22.0,
+                  vertical: 15.0
                 ),
                 child: Text(
                     categories[index],
                   style: TextStyle(
-                    color: index == selectedIndex ? Colors.white : Colors.white54,
-                    fontSize: 24.0,
+                    color: index == selectedIndex ? Colors.blueGrey : Colors.black,
+                    fontSize: 14.0,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 1.2
+                    letterSpacing: 1.0
                   ),
                 ),
               ),

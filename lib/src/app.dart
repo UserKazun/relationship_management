@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
+import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
 import 'package:relationship_management/src/ui/screens/login_screen.dart';
 import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 
@@ -18,7 +19,8 @@ class App extends StatelessWidget {
       ),
       routes: {
         MenuScreen.routeName: (_) => MenuScreen(),
-        LoginScreen.routeName: (_) => LoginScreen()
+        LoginScreen.routeName: (_) => LoginScreen(),
+        ItemCreateScreen.routeName: (_) => ItemCreateScreen(),
       },
       home: FutureBuilder<FirebaseUser>(
         future: Auth.getCurrentUser(),

@@ -27,5 +27,4 @@ abstract class ItemsController {
         .where('uid', isEqualTo: uid)
         .snapshots();
   }
-
 }

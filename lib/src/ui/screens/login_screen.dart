@@ -5,7 +5,7 @@ import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  static const String routeName = "/login";
+  static const String routeName = "/login_screen";
 
   @override
   _LoginScreenState createState() => _LoginScreenState();

@@ -4,7 +4,7 @@ import 'package:relationship_management/src/services/auth.dart';
 
 abstract class CategoryController {
   static Map<String, dynamic> _categoryKey = {
-    'category_key': ['全て', '最近', 'お気に入り', '仕事', 'プライベート']
+    'categoryKey': ['仕事', 'プライベート']
   };
 
   static Future<Map<String, dynamic>> fetchCategoryKey() async {
@@ -16,7 +16,7 @@ abstract class CategoryController {
           .get();
       if (doc == null) return _categoryKey;
       return {
-        'category_key': List<String>.from(doc.data['categoryKey'])
+        'categoryKey': List<String>.from(doc.data['categoryKey'])
       };
     } catch (error) {
       return null;

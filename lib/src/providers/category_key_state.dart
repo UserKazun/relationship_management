@@ -3,7 +3,7 @@ import 'package:relationship_management/src/controllers/category_controller.dart
 
 class CategoryKeyState extends ChangeNotifier {
   Map<String, dynamic> _saveCategoryKey = {
-    'category_key': ['全て', '最近', 'お気に入り', '仕事', 'プライベート']
+    'categoryKey': ['仕事', 'プライベート']
   };
 
   CategoryKeyState() {

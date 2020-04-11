@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:provider/provider.dart';
-import 'package:relationship_management/src/controllers/itemsController.dart';
+import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/providers/category_key_state.dart';
 
 class CreateForm extends StatefulWidget {
@@ -15,6 +14,7 @@ class _CreateFormState extends State<CreateForm> {
   final _formKey = GlobalKey<FormState>();
   final _pageViewController = PageController();
   final _textControllers = [
+    TextEditingController(),
     TextEditingController(),
     TextEditingController(),
     TextEditingController(),
@@ -30,9 +30,8 @@ class _CreateFormState extends State<CreateForm> {
 
   void _submitItem() {
     ItemsController.createItem(
-      name: _textControllers[0].text,
-      // todo: DatePicker
-      birthday: _textControllers[1].text,
+      categoryKey: _textControllers[0].text,
+      name: _textControllers[1].text,
       hobby: _textControllers[2].text,
     );
     Navigator.pop(context);
@@ -60,7 +59,8 @@ class _CreateFormState extends State<CreateForm> {
     @required int pageIndex,
     @required String title,
     @required String description,
-    @required Widget textField,
+    Widget textField,
+    Widget option,
     CategoryKeyState categoryKeyState,
     List<String> categoryKeys,
   }) {
@@ -129,6 +129,13 @@ class _CreateFormState extends State<CreateForm> {
             ),
           SizedBox(height: 12),
 
+          Row(
+            children: <Widget>[
+              Flexible(child: textField),
+              if (option != null) option,
+            ],
+          ),
+
           Expanded(
             child: Align(
               alignment: Alignment.bottomRight,
@@ -178,16 +185,43 @@ class _CreateFormState extends State<CreateForm> {
     _pages = [
       buildPage(
         pageIndex: 0,
-        title: 'カテゴリー',
-        description: 'お相手の名前を入力してください。',
+        title: 'テスト',
+        description: 'テスト',
         textField: TextFormField(
           controller: _textControllers[0],
           textCapitalization: TextCapitalization.sentences,
           autofocus: true,
-          decoration: InputDecoration(prefixIcon: Icon(Icons.vpn_key)),
+          decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
         ),
         categoryKeyState: categoryKeyState,
         categoryKeys: categoryKeyState.categoryKey['categoryKey'],
+      ),
+      buildPage(
+        pageIndex: 1,
+        title: 'テスト',
+        description: 'テスト。',
+        textField: TextFormField(
+          controller: _textControllers[1],
+          textCapitalization: TextCapitalization.sentences,
+          autofocus: true,
+          decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
+          validator: (value) {
+            if (value.isEmpty) return 'お名前を入力してください。';
+            return null;
+          },
+        ),
+      ),
+
+      buildPage(
+          pageIndex: 2,
+          title: 'テスト',
+          description: 'テスト。',
+          textField: TextFormField(
+            controller: _textControllers[2],
+            textCapitalization: TextCapitalization.sentences,
+            autofocus: true,
+            decoration: InputDecoration(prefixIcon: Icon(Icons.audiotrack)),
+          )
       ),
     ];
     return _pages;

@@ -28,6 +28,7 @@ dependencies:
   flutter_staggered_animations:
   flutter_typeahead:
   provider: ^4.0.4
+  intl:
 
 
 

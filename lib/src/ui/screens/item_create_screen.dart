@@ -9,7 +9,7 @@ class ItemCreateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('New Item')),
-      body: CreateForm(),
+      body: Center(child: CreateForm()),
     );
   }
 }

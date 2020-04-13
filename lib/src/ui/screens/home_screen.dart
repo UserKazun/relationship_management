@@ -1,10 +1,14 @@
 import 'dart:io' show Platform;
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
 import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 import 'package:relationship_management/src/services/auth.dart';
+import 'package:relationship_management/src/ui/widgets/items_container.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String home = 'home_screen';
@@ -51,6 +55,16 @@ class HomeScreen extends StatelessWidget {
               },
             ),
           ),
+          SafeArea(
+            child: MultiProvider(
+              providers: [
+                StreamProvider<QuerySnapshot>(
+                  create: (context) => ItemsController.getUserItems(this.uid),
+                ),
+              ],
+              child: ItemsContainer(),
+            ),
+          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -26,4 +26,8 @@ abstract class ItemsController {
         .where('uid', isEqualTo: uid)
         .snapshots();
   }
+
+  static Future deleteItem(String itemId) {
+    return Firestore.instance.collection('items').document(itemId).delete();
+  }
 }

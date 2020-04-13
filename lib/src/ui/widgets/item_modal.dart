@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:relationship_management/src/controllers/items_controller.dart';
 
 class ItemModal extends StatelessWidget {
   final DocumentSnapshot item;
@@ -82,9 +83,13 @@ class ItemModal extends StatelessWidget {
                   child: Text(
                     '削除'
                   ),
+                  onPressed: () {
+                    ItemsController.deleteItem(this.item.documentID);
+                    Navigator.pop(context);
+                  },
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

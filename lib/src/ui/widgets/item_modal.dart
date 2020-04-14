@@ -37,6 +37,9 @@ class ItemModal extends StatelessWidget {
                   : '',
             ),
             Text(
+              this.item['name'],
+            ),
+            Text(
               '$formattedDateOpened',
             ),
             Padding(
@@ -45,9 +48,9 @@ class ItemModal extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'hobby'
+                    '趣味'
                   ),
-                  // todo: conversion bottom
+                  // todo: ボタン化する
                   Icon(
                       Icons.star
                   ),
@@ -76,7 +79,7 @@ class ItemModal extends StatelessWidget {
                     '編集'
                   ),
                   onPressed: () {
-
+                    // todo: 予めデータがある場合の編集画面を作る
                   },
                 ),
                 RaisedButton(

@@ -30,9 +30,11 @@ class _CreateFormState extends State<CreateForm> {
 
   void _submitItem() {
     ItemsController.createItem(
-      categoryKey: _textControllers[0].text,
-      name: _textControllers[1].text,
-      hobby: _textControllers[2].text,
+      categoryKey: '',
+      name: _textControllers[0].text,
+      gender: _textControllers[1].text,
+      character: _textControllers[2].text,
+      hobby: _textControllers[3].text,
     );
     Navigator.pop(context);
   }
@@ -154,10 +156,10 @@ class _CreateFormState extends State<CreateForm> {
                   ),
                   Consumer<CategoryKeyState>(
                     builder: (_, categoryKeyState, __) => RaisedButton(
-                      child: Text(pageIndex == 2 ? '追加' : '次へ'),
+                      child: Text(pageIndex == 3 ? '追加' : '次へ'),
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
-                          if (pageIndex == 2) {
+                          if (pageIndex == 3) {
                             _submitItem();
                             categoryKeyState.updateCategoryKey(
                                 _textControllers[1].text
@@ -185,23 +187,10 @@ class _CreateFormState extends State<CreateForm> {
     _pages = [
       buildPage(
         pageIndex: 0,
-        title: 'テスト',
-        description: 'テスト',
+        title: 'お名前',
+        description: 'お相手のお名前を入力してください。',
         textField: TextFormField(
           controller: _textControllers[0],
-          textCapitalization: TextCapitalization.sentences,
-          autofocus: true,
-          decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
-        ),
-        categoryKeyState: categoryKeyState,
-        categoryKeys: categoryKeyState.categoryKey['categoryKey'],
-      ),
-      buildPage(
-        pageIndex: 1,
-        title: 'テスト',
-        description: 'テスト。',
-        textField: TextFormField(
-          controller: _textControllers[1],
           textCapitalization: TextCapitalization.sentences,
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
@@ -211,17 +200,42 @@ class _CreateFormState extends State<CreateForm> {
           },
         ),
       ),
+      buildPage(
+        pageIndex: 1,
+        title: '性別',
+        description: 'お相手の性別を入力してください。',
+        textField: TextFormField(
+          controller: _textControllers[1],
+          textCapitalization: TextCapitalization.sentences,
+          autofocus: true,
+          decoration: InputDecoration(prefixIcon: Icon(Icons.accessibility_new)),
+        ),
+      ),
 
       buildPage(
           pageIndex: 2,
-          title: 'テスト',
-          description: 'テスト。',
+          title: '特徴',
+          description: 'お相手の特徴を入力してください。',
           textField: TextFormField(
             controller: _textControllers[2],
             textCapitalization: TextCapitalization.sentences,
             autofocus: true,
+            decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+          ),
+        // todo: 特徴の候補を表示
+      ),
+
+      buildPage(
+          pageIndex: 3,
+          title: '趣味',
+          description: 'お相手の趣味を入力してください。',
+          textField: TextFormField(
+            controller: _textControllers[3],
+            textCapitalization: TextCapitalization.sentences,
+            autofocus: true,
             decoration: InputDecoration(prefixIcon: Icon(Icons.audiotrack)),
-          )
+          ),
+        // todo: 趣味の候補を表示
       ),
     ];
     return _pages;

@@ -6,6 +6,8 @@ abstract class ItemsController {
   static Future createItem({
     String categoryKey,
     String name,
+    String gender,
+    String character,
     String hobby,
     bool isLiked,
   }) async {
@@ -14,6 +16,8 @@ abstract class ItemsController {
       'uid': user.uid,
       'categoryKey': categoryKey,
       'name': name,
+      'gender': gender,
+      'character': character,
       'hobby': hobby,
       'time': DateTime.now(),
       'isLiked': isLiked,

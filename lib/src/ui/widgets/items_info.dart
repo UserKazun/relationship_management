@@ -11,10 +11,17 @@ class ItemsInfo extends StatelessWidget {
       List<DocumentSnapshot> items) {
     int allItem = 0;
     for (DocumentSnapshot item in items) {
-      if (item['categoryKey'] == '全て')
-        allItem += item['全て'];
+      if (item['categoryKey'] == '')
+        allItem += item['categoryKey'];
     }
     return allItem.toString();
+  }
+
+  String getHeaderText(List<DocumentSnapshot> items) {
+    String text = '${items.length} 人';
+    if (items.length != 1) text += '人々';
+
+    return text;
   }
 
   @override

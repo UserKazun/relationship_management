@@ -34,4 +34,11 @@ abstract class ItemsController {
   static Future deleteItem(String itemId) {
     return Firestore.instance.collection('items').document(itemId).delete();
   }
+
+  static Future updateFavorite(String itemId, bool favorite) {
+    return Firestore.instance
+        .collection('items')
+        .document(itemId)
+        .updateData({'isLiked': favorite});
+  }
 }

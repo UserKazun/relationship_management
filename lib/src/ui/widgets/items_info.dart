@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:relationship_management/src/providers/filter_state.dart';
 
 class ItemsInfo extends StatelessWidget {
   final List<DocumentSnapshot> items;
@@ -18,22 +20,46 @@ class ItemsInfo extends StatelessWidget {
   }
 
   String getHeaderText(List<DocumentSnapshot> items) {
-    String text = '${items.length} 人';
-    if (items.length != 1) text += '人々';
-
-    return text;
+    if (items.length == 1) {
+      String text = '${items.length} person';
+      return text;
+    } else {
+      String text = '${items.length} people';
+      return text;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160.0,
-      width: double.infinity,
-      padding: EdgeInsets.all(10.0),
-      margin: EdgeInsets.all(12.0),
-      child: Card(
-        color: Color(0xFFE7EFB),
-        child: Text('全て'),
+      height:
+        Provider.of<FilterState>(context).filterEnabled || items.length == 0
+            ? 150
+            : 100,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: items.length > 0
+            ? MainAxisAlignment.start
+            : MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text(
+            'Home',
+            style: Theme.of(context).textTheme.title,
+          ),
+          Spacer(),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            getHeaderText(items),
+            style: Theme.of(context).textTheme.headline,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          // todo: カテゴリーわけ
+        ],
       ),
     );
   }

@@ -41,4 +41,8 @@ abstract class ItemsController {
         .document(itemId)
         .updateData({'isLiked': favorite});
   }
+
+  static List<DocumentSnapshot>filterAllItems(Iterable<DocumentSnapshot> items) {
+    return items.where((item) => item['categoryKey'] == '').toList();
+  }
 }

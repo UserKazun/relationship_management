@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:relationship_management/src/ui/widgets/item_modal.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -39,6 +40,11 @@ class ItemCard extends StatelessWidget {
               ),
               Text(
                 this.item['name'],
+                style: GoogleFonts.kosugiMaru(
+                  textStyle: TextStyle(
+                      fontSize: 15
+                  ),
+                ),
               ),
               Chip(
                 backgroundColor: Colors.green,

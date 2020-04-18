@@ -2,9 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/providers/filter_state.dart';
 import 'package:relationship_management/src/ui/widgets/items_grid.dart';
+import 'package:relationship_management/src/ui/widgets/items_info.dart';
 
 class ItemsContainer extends StatefulWidget {
   @override
@@ -30,6 +33,9 @@ class _ItemContainerState extends State<ItemsContainer> {
             create: (context) => FilterState(),
             child: Column(
               children: <Widget>[
+                ItemsInfo(
+                  ItemsController.filterAllItems(itemsData.documents)
+                ),
                 Stack(
                   alignment: AlignmentDirectional.topStart,
                   children: <Widget>[
@@ -38,7 +44,9 @@ class _ItemContainerState extends State<ItemsContainer> {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('categoryKey')
+                          Text(
+                            '',
+                          ),
                         ],
                       ),
                     ),

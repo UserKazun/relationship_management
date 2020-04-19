@@ -34,7 +34,7 @@ class ItemsInfo extends StatelessWidget {
     return Container(
       height:
         Provider.of<FilterState>(context).filterEnabled || items.length == 0
-            ? 150
+            ? 125
             : 100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,7 +53,11 @@ class ItemsInfo extends StatelessWidget {
           ),
           Text(
             getHeaderText(items),
-            style: Theme.of(context).textTheme.headline,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 35
+            ),
           ),
           SizedBox(
             height: 10,

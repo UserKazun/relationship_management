@@ -5,12 +5,12 @@ import 'package:provider/provider.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/providers/category_key_state.dart';
 
-class CreateForm extends StatefulWidget {
+class CreateFormScreen extends StatefulWidget {
   @override
-  _CreateFormState createState() => _CreateFormState();
+  _CreateFormScreenState createState() => _CreateFormScreenState();
 }
 
-class _CreateFormState extends State<CreateForm> {
+class _CreateFormScreenState extends State<CreateFormScreen> {
   final _formKey = GlobalKey<FormState>();
   final _pageViewController = PageController();
   final _textControllers = [

@@ -126,7 +126,7 @@ void _showEmailConfirmDialog(BuildContext context) {
                 Auth.sendEmailVerification();
                 Navigator.of(context).pop();
               },
-            )
+            ),
           ],
         );
     }

@@ -9,7 +9,7 @@ import 'services/auth.dart';
 
 class App extends StatelessWidget {
   final Color primaryColor = Color(0xFF369FFF);
-  final Color accentColor = Color(0xFFFEE0D5);
+  final Color accentColor = Color(0xFF333333);
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,15 @@ class App extends StatelessWidget {
             color: Colors.white,
             fontWeight: FontWeight.w700,
           ),
-          headline:
-          TextStyle(
+          headline: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 35
+        ),
+          button: TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 35
+              fontWeight: FontWeight.bold
           ),
-          button: TextStyle(color: Colors.white),
         ),
         buttonTheme: ButtonThemeData(
           buttonColor: primaryColor,

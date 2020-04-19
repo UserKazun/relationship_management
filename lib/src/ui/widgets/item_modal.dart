@@ -10,7 +10,7 @@ class ItemModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String displayItemSum = this.item['name'];
+    // String displayItemSum = this.item['name'];
     DateFormat formatter = DateFormat('yyyy/MM/dd');
     String formattedDateOpened =
         formatter.format(DateTime.parse(this.item['time'].toDate().toString()));

@@ -12,6 +12,7 @@ class MenuScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         title: Text('Menu'),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SafeArea(
         child: Column(

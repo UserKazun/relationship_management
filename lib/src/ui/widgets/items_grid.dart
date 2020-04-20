@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
-import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/providers/filter_state.dart';
 import 'package:relationship_management/src/ui/widgets/item_card.dart';
 
@@ -58,10 +57,10 @@ class ItemsGrid extends StatelessWidget {
               SizedBox(
                 height: 90,
               ),
+              Text('最近知り合った人はいませんか? 登録してみましょう。'),
               Image(
                 image: AssetImage('assets/images/Browsing.png')
               ),
-              Text('最近知り合った人はいませんか? 登録してみましょう。')
             ],
           ),
         );

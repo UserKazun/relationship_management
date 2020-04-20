@@ -36,11 +36,17 @@ class ItemModal extends StatelessWidget {
                   ? '${this.item['categoryKey']}'
                   : '',
             ),
-            Text(
-              this.item['name'],
-            ),
-            Text(
-              '$formattedDateOpened',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  this.item['name'],
+                  style: Theme.of(context).textTheme.subtitle,
+                ),
+                Text(
+                  '$formattedDateOpened',
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.only(top: 12),
@@ -66,8 +72,8 @@ class ItemModal extends StatelessWidget {
               ],
             ),
             Expanded(
-              child: Text(
-                'Image'
+              child: Image(
+                image: AssetImage('assets/images/HandsUp.png')
               ),
             ),
             // fit: BoxFit.contain,

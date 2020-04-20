@@ -26,6 +26,11 @@ class App extends StatelessWidget {
             color: Colors.white,
             fontWeight: FontWeight.w700,
           ),
+          subtitle: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 25
+          ),
           headline: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,

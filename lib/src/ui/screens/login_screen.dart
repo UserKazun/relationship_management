@@ -94,7 +94,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/Browsing.png')
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -38,21 +38,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   Text(
-                      "App name",
+                    'App Name',
                     style: Theme.of(context)
                         .textTheme
                         .headline
                         .copyWith(color: Theme.of(context).primaryColor),
                   ),
                   Text(
-                    'App description',
+                    'App Description',
                     style: Theme.of(context)
                         .textTheme
                         .subtitle
                         .copyWith(color: Theme.of(context).primaryColor),
                   ),
-                  SizedBox(height: 50),
-                  // todo: setting image
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -96,7 +94,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/Browsing.png')
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

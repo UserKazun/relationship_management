@@ -7,6 +7,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
+import 'package:relationship_management/src/ui/widgets/signin_signup_form.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "/login_screen";
@@ -53,38 +54,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         .subtitle
                         .copyWith(color: Theme.of(context).primaryColor),
                   ),
-                  SizedBox(height: 25),
+                  SizedBox(height: 20),
                   Image(
                       image: AssetImage('assets/images/Character.png')
                   ),
-                  Container(
-                    height: 250,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey[400],
-                          spreadRadius: -2.0,
-                          blurRadius: 12.0,
-                          offset: Offset(6.0, 6.0),
-                        ),
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: -2.0,
-                          blurRadius: 12.0,
-                          offset: Offset(-6.0, -6.0),
-                        ),
-                      ],
-                    ),
-                    padding: EdgeInsets.only(top: 32),
-                    child: Stack(
-                      children: <Widget>[
 
-                      ],
-                    ),
-                  ),
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -122,9 +96,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 );
                             },
                           ),
+                        Divider(),
+
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

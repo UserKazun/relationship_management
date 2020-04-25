@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:relationship_management/src/services/auth.dart';
-import 'package:relationship_management/src/ui/screens/login_screen.dart';
+import 'package:relationship_management/src/ui/screens/welcome.dart';
 
 class MenuScreen extends StatelessWidget {
   static const String routeName = '/menu';
@@ -20,13 +20,6 @@ class MenuScreen extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.verified_user),
               title: Text('プライバシーポリシー'),
-              onTap: () {
-
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.pan_tool),
-              title: Text('使い方'),
               onTap: () {
 
               },

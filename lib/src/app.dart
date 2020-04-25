@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
 import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
-import 'package:relationship_management/src/ui/screens/login_screen.dart';
+import 'package:relationship_management/src/ui/screens/welcome.dart';
 import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 
 import 'services/auth.dart';

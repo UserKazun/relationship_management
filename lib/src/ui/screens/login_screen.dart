@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:relationship_management/src/services/auth.dart';
@@ -20,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: loading
           ? Center(
         child: SpinKitDoubleBounce(
@@ -50,6 +52,38 @@ class _LoginScreenState extends State<LoginScreen> {
                         .textTheme
                         .subtitle
                         .copyWith(color: Theme.of(context).primaryColor),
+                  ),
+                  SizedBox(height: 25),
+                  Image(
+                      image: AssetImage('assets/images/Character.png')
+                  ),
+                  Container(
+                    height: 250,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey[400],
+                          spreadRadius: -2.0,
+                          blurRadius: 12.0,
+                          offset: Offset(6.0, 6.0),
+                        ),
+                        BoxShadow(
+                          color: Colors.white,
+                          spreadRadius: -2.0,
+                          blurRadius: 12.0,
+                          offset: Offset(-6.0, -6.0),
+                        ),
+                      ],
+                    ),
+                    padding: EdgeInsets.only(top: 32),
+                    child: Stack(
+                      children: <Widget>[
+
+                      ],
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -92,15 +126,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   )
                 ],
-              ),
-            ),
-          ),
-          Positioned(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/Browsing.png')
-                ),
               ),
             ),
           ),

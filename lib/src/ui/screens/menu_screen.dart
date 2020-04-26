@@ -56,7 +56,7 @@ void _showSignOutDialog(BuildContext context) {
               child: Text('ログアウト'),
               onPressed: () {
                 Auth.signOut();
-                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                Navigator.pushReplacementNamed(context, Welcome.routeName);
               },
             ),
           ],

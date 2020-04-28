@@ -21,92 +21,78 @@ class _RegisterScreenState extends State<RegisterScreen> {
         iconTheme: Theme.of(context).iconTheme,
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(22.0),
-          child: Column(
-            children: <Widget>[
-            Text(
-              'Create account',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).primaryColor
-              ),
-            ),
-            SizedBox(height: 80,),
-            Container(
-              padding: EdgeInsets.all(15.0),
-              height: 230,
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[400],
-                    spreadRadius: -2.0,
-                    blurRadius: 12.0,
-                    offset: Offset(6.0, 6.0),
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Create account',
+                    style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor
+                    ),
                   ),
-                  BoxShadow(
-                    color: Colors.white,
-                    spreadRadius: -2.0,
-                    blurRadius: 12.0,
-                    offset: Offset(-6.0, -6.0),
+                  Image(
+                    image: AssetImage(
+                        'assets/images/people_in_couple.png'
+                    ),
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        SizedBox(height: 5),
+                        TextFormField(
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'mail address';
+                            }
+                            return null;
+                          },
+                          decoration: InputDecoration(
+                            labelText: 'Email',
+                            prefixIcon: Icon(Icons.email),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+
+                        TextFormField(
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'password';
+                            }
+                            return null;
+                          },
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            prefixIcon: Icon(Icons.lock),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        RaisedButton(
+                          child: Text(
+                              'Sign Up'
+                          ),
+                          onPressed: () {
+
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Text(
-                      'Email',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    TextFormField(
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'mail address';
-                        }
-                        return null;
-                      },
-                    ),
-
-                    SizedBox(height: 15),
-
-                    Text(
-                      'Password',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    TextFormField(
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'password';
-                        }
-                        return null;
-                      },
-                    ),
-                  ],
-                ),
-              ),
             ),
-            SizedBox(height: 50),
-            RaisedButton(
-              onPressed: () {
-
-              },
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

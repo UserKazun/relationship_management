@@ -49,7 +49,7 @@ class _WelcomeState extends State<Welcome> {
                   ),
                   SizedBox(height: 100),
                   Image(
-                      image: AssetImage('assets/images/Character.png')
+                      image: AssetImage('assets/images/Connect.png')
                   ),
                   Expanded(
                     child: Column(

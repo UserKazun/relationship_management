@@ -28,8 +28,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
               child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                //mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Text(
                     'Create account',
@@ -44,48 +44,50 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         'assets/images/people_in_couple.png'
                     ),
                   ),
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        SizedBox(height: 5),
-                        TextFormField(
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'mail address';
-                            }
-                            return null;
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Email',
-                            prefixIcon: Icon(Icons.email),
+                  Container(
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          SizedBox(height: 5),
+                          TextFormField(
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'mail address';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              prefixIcon: Icon(Icons.email),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
+                          SizedBox(height: 10),
 
-                        TextFormField(
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'password';
-                            }
-                            return null;
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Password',
-                            prefixIcon: Icon(Icons.lock),
+                          TextFormField(
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'password';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              prefixIcon: Icon(Icons.lock),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 20),
-                        RaisedButton(
-                          child: Text(
-                              'Sign Up'
-                          ),
-                          onPressed: () {
+                          SizedBox(height: 20),
+                          RaisedButton(
+                            child: Text(
+                                'Sign Up'
+                            ),
+                            onPressed: () {
 
-                          },
-                        ),
-                      ],
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

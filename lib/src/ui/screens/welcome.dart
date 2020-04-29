@@ -2,19 +2,22 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
+import 'package:relationship_management/src/ui/screens/register_screen.dart';
+import 'package:relationship_management/src/ui/screens/signin_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  static const String routeName = "/login_screen";
+class Welcome extends StatefulWidget {
+  static const String routeName = "/welcome";
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _WelcomeState createState() => _WelcomeState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _WelcomeState extends State<Welcome> {
   bool loading = false;
 
   @override
@@ -38,18 +41,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   Text(
-                    'App Name',
+                    'Welcome',
                     style: Theme.of(context)
                         .textTheme
                         .headline
                         .copyWith(color: Theme.of(context).primaryColor),
                   ),
-                  Text(
-                    'App Description',
-                    style: Theme.of(context)
-                        .textTheme
-                        .subtitle
-                        .copyWith(color: Theme.of(context).primaryColor),
+                  SizedBox(height: 100),
+                  Image(
+                      image: AssetImage('assets/images/Connect.png')
                   ),
                   Expanded(
                     child: Column(
@@ -88,19 +88,34 @@ class _LoginScreenState extends State<LoginScreen> {
                                 );
                             },
                           ),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Divider(color: Colors.black),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text('OR'),
+                            ),
+                            Expanded(child: Divider(color: Colors.black))
+                          ],
+                        ),
+                        RaisedButton(
+                          child: Text('Create Account'),
+                          onPressed: () {
+                            Navigator.pushNamed(context, RegisterScreen.routeName);
+                          },
+                        ),
+                        FlatButton(
+                          child: Text('Sign in'),
+                          onPressed: () {
+                            Navigator.pushNamed(context, SignInScreen.routeName);
+                          },
+                        ),
                       ],
                     ),
-                  )
+                  ),
                 ],
-              ),
-            ),
-          ),
-          Positioned(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/Browsing.png')
-                ),
               ),
             ),
           ),

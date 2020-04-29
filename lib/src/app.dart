@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
 import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
-import 'package:relationship_management/src/ui/screens/login_screen.dart';
+import 'package:relationship_management/src/ui/screens/register_screen.dart';
+import 'package:relationship_management/src/ui/screens/signin_screen.dart';
+import 'package:relationship_management/src/ui/screens/welcome.dart';
 import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 
 import 'services/auth.dart';
@@ -21,6 +23,7 @@ class App extends StatelessWidget {
         accentColor: accentColor,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.black),
         textTheme: TextTheme(
           title: TextStyle(
             color: Colors.white,
@@ -61,9 +64,11 @@ class App extends StatelessWidget {
         ),
       ),
       routes: {
-        MenuScreen.routeName: (_) => MenuScreen(),
-        LoginScreen.routeName: (_) => LoginScreen(),
+        Welcome.routeName: (_) => Welcome(),
+        RegisterScreen.routeName: (_) => RegisterScreen(),
+        SignInScreen.routeName: (_) => SignInScreen(),
         ItemCreateScreen.routeName: (_) => ItemCreateScreen(),
+        MenuScreen.routeName: (_) => MenuScreen()
       },
       home: FutureBuilder<FirebaseUser>(
         future: Auth.getCurrentUser(),
@@ -75,7 +80,7 @@ class App extends StatelessWidget {
             }
             return userSnapshot.hasData
                 ? HomeScreen(userSnapshot.data.uid)
-                : LoginScreen();
+                : Welcome();
           } else {
             return Text(
                 'relationship_management'

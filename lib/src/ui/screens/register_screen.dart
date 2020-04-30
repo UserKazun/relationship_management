@@ -103,11 +103,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         children: <Widget>[
                           SizedBox(height: 5),
                           TextFormField(
-                            validator: (value) {
-                              if (value.isEmpty) {
-                                return 'mail address';
-                              }
-                              return null;
+                            keyboardType: TextInputType.emailAddress,
+                            textInputAction: TextInputAction.next,
+                            controller: _emailController,
+                            validator: (value) => validateEmail(value),
+                            onFieldSubmitted: (v) {
+                              FocusScope.of(context).nextFocus();
                             },
                             decoration: InputDecoration(
                               labelText: 'Email',
@@ -117,9 +118,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           SizedBox(height: 10),
 
                           TextFormField(
+                            keyboardType: TextInputType.text,
+                            controller: _passwordController,
                             validator: (value) {
-                              if (value.isEmpty) {
-                                return 'password';
+                              if (value.length < 8) {
+                                return 'Password must be at least 8 characters';
                               }
                               return null;
                             },
@@ -127,6 +130,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               labelText: 'Password',
                               prefixIcon: Icon(Icons.lock),
                             ),
+                            obscureText: true,
                           ),
                           SizedBox(height: 20),
                           RaisedButton(
@@ -134,7 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 'Sign Up'
                             ),
                             onPressed: () {
-
+                              _submitForm();
                             },
                           ),
                         ],

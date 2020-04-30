@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import 'package:relationship_management/src/services/auth.dart';
+import 'package:relationship_management/src/ui/screens/home_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   static const String routeName = "/register_screen";
@@ -10,9 +14,49 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  bool loading = false;
+  String errorMessage = "";
 
-  final nameFocus = FocusNode();
-  final passwordFocus = FocusNode();
+  String validateEmail(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@'
+        r'((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)'
+        r'+[a-zA-Z]{2,}))$';
+
+    RegExp regex = new RegExp(pattern);
+    if (!regex.hasMatch(value))
+      return 'Enter a valid Email!';
+    else
+      return null;
+  }
+
+  void _submitForm() async {
+    errorMessage = '';
+    if (_formKey.currentState.validate()) {
+      try {
+        setState(() {
+          loading = true;
+        });
+        final user =
+        await Auth.signUp(_emailController.text, _passwordController.text);
+        if (user != null) {
+          Auth.sendEmailVerification();
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen(user)),
+              ModalRoute.withName('/'));
+        }
+      } catch (error) {
+        print(error);
+        setState(() {
+          loading = false;
+          errorMessage = error.message;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +65,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
         iconTheme: Theme.of(context).iconTheme,
         elevation: 0,
       ),
-      body: Stack(
+      body: loading
+          ? Center(
+        child: SpinKitDoubleBounce(
+          color: Theme.of(context).primaryColor,
+          size: 50.0,
+        ),
+      )
+      : Stack(
         fit: StackFit.expand,
         children: <Widget>[
           SafeArea(

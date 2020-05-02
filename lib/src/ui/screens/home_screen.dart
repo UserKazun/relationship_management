@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE0E5EC),
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -54,7 +54,8 @@ class HomeScreen extends StatelessWidget {
           else
             _showEmailConfirmDialog(context);
         },
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, color: Colors.black,),
+        backgroundColor: Color(0xFFE0E5EC),
       ),
     );
   }

@@ -29,7 +29,7 @@ class ItemCard extends StatelessWidget {
         ]
       ),
       child: Card(
-        color: Color(0xFFE0E5EC),
+        color: Theme.of(context).cardColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
         ),

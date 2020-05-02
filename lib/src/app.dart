@@ -21,8 +21,11 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primaryColor: primaryColor,
         accentColor: accentColor,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(color: Colors.white),
+        backgroundColor: Color(0xFFE0E5EC),
+        cardColor: Color(0xFFE0E5EC),
+        buttonColor: Color(0xFFE0E5EC),
+        scaffoldBackgroundColor: Color(0xFFE0E5EC),
+        appBarTheme: AppBarTheme(color: Color(0xFFE0E5EC)),
         iconTheme: IconThemeData(color: Colors.black),
         textTheme: TextTheme(
           title: TextStyle(
@@ -38,14 +41,14 @@ class App extends StatelessWidget {
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 35
-        ),
+          ),
           button: TextStyle(
-              color: Colors.white,
+              color: primaryColor,
               fontWeight: FontWeight.bold
           ),
         ),
         buttonTheme: ButtonThemeData(
-          buttonColor: primaryColor,
+          buttonColor: Color(0xFFE0E5EC),
           textTheme: ButtonTextTheme.normal,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),

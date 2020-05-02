@@ -9,7 +9,12 @@ class ItemCreateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New Item'),
+        title: Text(
+            'New Item',
+          style: TextStyle(
+            color: Colors.black
+          ),
+        ),
         iconTheme: Theme.of(context).iconTheme,
       ),
       body: Center(child: CreateFormScreen()),

@@ -6,7 +6,8 @@ abstract class ItemsController {
   static Future createItem({
     String categoryKey,
     String name,
-    String birthday,
+    String gender,
+    String character,
     String hobby,
     bool isLiked,
   }) async {
@@ -15,8 +16,10 @@ abstract class ItemsController {
       'uid': user.uid,
       'categoryKey': categoryKey,
       'name': name,
-      'birthday': birthday,
+      'gender': gender,
+      'character': character,
       'hobby': hobby,
+      'time': DateTime.now(),
       'isLiked': isLiked,
     });
   }
@@ -28,4 +31,18 @@ abstract class ItemsController {
         .snapshots();
   }
 
+  static Future deleteItem(String itemId) {
+    return Firestore.instance.collection('items').document(itemId).delete();
+  }
+
+  static Future updateFavorite(String itemId, bool favorite) {
+    return Firestore.instance
+        .collection('items')
+        .document(itemId)
+        .updateData({'isLiked': favorite});
+  }
+
+  static List<DocumentSnapshot>filterAllItems(Iterable<DocumentSnapshot> items) {
+    return items.where((item) => item['categoryKey'] == '').toList();
+  }
 }

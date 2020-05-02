@@ -55,12 +55,12 @@ class ItemsGrid extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 90,
+                height: 130,
               ),
-              Text('最近知り合った人はいませんか? 登録してみましょう。'),
               Image(
                 image: AssetImage('assets/images/Browsing.png')
               ),
+              Text('最近知り合った人はいませんか? 登録してみましょう。'),
             ],
           ),
         );

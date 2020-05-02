@@ -15,92 +15,104 @@ class ItemModal extends StatelessWidget {
     String formattedDateOpened =
         formatter.format(DateTime.parse(this.item['time'].toDate().toString()));
 
-    return Container(
-      height: 450,
-      margin: EdgeInsets.only(left: 18, right: 18),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(18),
-          topRight: Radius.circular(18),
+    return Center(
+      child: Container(
+        height: 450,
+        margin: EdgeInsets.only(left: 20, right: 20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.0),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(26.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Text(
-              this.item['categoryKey'] == true
-                  ? '${this.item['categoryKey']}'
-                  : '',
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  this.item['name'],
-                  style: Theme.of(context).textTheme.subtitle,
-                ),
-                Text(
-                  '$formattedDateOpened',
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 12),
-              child: Row(
+
+
+
+        /*
+        child: Padding(
+          padding: const EdgeInsets.all(26.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Text(
+                this.item['categoryKey'] == true
+                    ? '${this.item['categoryKey']}'
+                    : '',
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    '趣味'
+                    this.item['name'],
+                    style: Theme.of(context).textTheme.subtitle,
                   ),
-                  // todo: ボタン化する
-                  Icon(
-                      Icons.star
+                  Text(
+                    '$formattedDateOpened',
                   ),
                 ],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  '${this.item['hobby']}',
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      '趣味',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    // todo: ボタン化する
+                    Icon(
+                        Icons.star
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            Expanded(
-              child: Image(
-                image: AssetImage('assets/images/HandsUp.png')
               ),
-            ),
-            // fit: BoxFit.contain,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                FlatButton(
-                  child: Text(
-                    '編集'
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    '${this.item['hobby']}',
                   ),
-                  onPressed: () {
-                    // todo: 予めデータがある場合の編集画面を作る
-                  },
+                ],
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Image(
+                  image: AssetImage('assets/images/HandsUp.png')
                 ),
-                RaisedButton(
-                  child: Text(
-                    '削除'
+              ),
+
+              SizedBox(height: 40),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  FlatButton(
+                    child: Text(
+                      '編集'
+                    ),
+                    onPressed: () {
+                      // todo: 予めデータがある場合の編集画面を作る
+                    },
                   ),
-                  onPressed: () {
-                    ItemsController.deleteItem(this.item.documentID);
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            ),
-          ],
+                  RaisedButton(
+                    child: Text(
+                      '削除'
+                    ),
+                    onPressed: () {
+                      ItemsController.deleteItem(this.item.documentID);
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
+        */
+
       ),
     );
   }

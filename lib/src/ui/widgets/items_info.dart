@@ -54,7 +54,7 @@ class ItemsInfo extends StatelessWidget {
           Text(
             getHeaderText(items),
             style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 35
             ),

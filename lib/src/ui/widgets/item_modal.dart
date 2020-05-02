@@ -23,43 +23,38 @@ class ItemModal extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.0),
         ),
-
-
-
-        /*
-        child: Padding(
-          padding: const EdgeInsets.all(26.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Text(
-                this.item['categoryKey'] == true
-                    ? '${this.item['categoryKey']}'
-                    : '',
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    this.item['name'],
-                    style: Theme.of(context).textTheme.subtitle,
-                  ),
-                  Text(
-                    '$formattedDateOpened',
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: Row(
+        child: Stack(
+          fit: StackFit.loose,
+          children: <Widget>[
+            Column(
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
+              //mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Text(
+                  this.item['categoryKey'] == true
+                      ? '${this.item['categoryKey']}'
+                      : '',
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      this.item['name'],
+                      style: Theme.of(context).textTheme.subtitle,
+                    ),
+                    Text(
+                      '$formattedDateOpened',
+                    ),
+                  ],
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
                       '趣味',
                       style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold
                       ),
                     ),
                     // todo: ボタン化する
@@ -68,51 +63,73 @@ class ItemModal extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    '${this.item['hobby']}',
-                  ),
-                ],
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Image(
-                  image: AssetImage('assets/images/HandsUp.png')
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      '${this.item['hobby']}',
+                    ),
+                  ],
                 ),
-              ),
 
-              SizedBox(height: 40),
+                SizedBox(height: 77),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  FlatButton(
-                    child: Text(
-                      '編集'
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    height: 190,
+                    child: Image(
+                      image: AssetImage(
+                          'assets/images/HandsUp.png'
+                      ),
                     ),
-                    onPressed: () {
-                      // todo: 予めデータがある場合の編集画面を作る
-                    },
                   ),
-                  RaisedButton(
-                    child: Text(
-                      '削除'
+                ),
+
+                Container(
+                  height: 83,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.elliptical(
+                            MediaQuery.of(context).size.width * 0.50, 18
+                        ),
+                        topRight: Radius.elliptical(
+                            MediaQuery.of(context).size.width * 0.50, 18
+                        ),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0)
                     ),
-                    onPressed: () {
-                      ItemsController.deleteItem(this.item.documentID);
-                      Navigator.pop(context);
-                    },
                   ),
-                ],
-              ),
-            ],
-          ),
+                  child: Row(
+                    children: <Widget>[
+                      FlatButton(
+                        child: Text(
+                            '編集'
+                        ),
+                        onPressed: () {
+                          // todo: 予めデータがある場合の編集画面を作る
+                        },
+                      ),
+
+                      SizedBox(width: 30),
+
+                      RaisedButton(
+                        child: Text(
+                            '削除'
+                        ),
+                        onPressed: () {
+                          ItemsController.deleteItem(this.item.documentID);
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        */
-
       ),
     );
   }

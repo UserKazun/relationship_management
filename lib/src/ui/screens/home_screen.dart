@@ -19,31 +19,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffefefe),
+      backgroundColor: Color(0xFFE0E5EC),
       body: Stack(
         children: <Widget>[
-          Container(
-            height: 225,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.topLeft,
-                stops: [0.1, 0.6],
-                colors: [
-                  Theme.of(context).primaryColor.withGreen(190),
-                  Theme.of(context).primaryColor,
-                ],
-              ),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.elliptical(
-                  MediaQuery.of(context).size.width * 0.50, 18
-                ),
-                bottomRight: Radius.elliptical(
-                  MediaQuery.of(context).size.width * 0.50, 18
-                ),
-              ),
-            ),
-          ),
           Positioned(
             top: 30,
             left: 5,

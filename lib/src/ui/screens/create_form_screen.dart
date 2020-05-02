@@ -131,11 +131,13 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
             ),
           SizedBox(height: 12),
 
-          Row(
-            children: <Widget>[
-              Flexible(child: textField),
-              if (option != null) option,
-            ],
+          Container(
+            child: Row(
+              children: <Widget>[
+                Flexible(child: textField),
+                if (option != null) option,
+              ],
+            ),
           ),
 
           Expanded(

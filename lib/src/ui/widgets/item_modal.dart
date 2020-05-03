@@ -20,7 +20,7 @@ class ItemModal extends StatelessWidget {
         height: 450,
         margin: EdgeInsets.only(left: 20, right: 20),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).backgroundColor,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Stack(
@@ -86,45 +86,29 @@ class ItemModal extends StatelessWidget {
                   ),
                 ),
 
-                Container(
-                  height: 83,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.elliptical(
-                            MediaQuery.of(context).size.width * 0.50, 18
-                        ),
-                        topRight: Radius.elliptical(
-                            MediaQuery.of(context).size.width * 0.50, 18
-                        ),
-                        bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular(10.0)
+                Row(
+                  children: <Widget>[
+                    FlatButton(
+                      child: Text(
+                          '編集'
+                      ),
+                      onPressed: () {
+                        // todo: 予めデータがある場合の編集画面を作る
+                      },
                     ),
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      FlatButton(
-                        child: Text(
-                            '編集'
-                        ),
-                        onPressed: () {
-                          // todo: 予めデータがある場合の編集画面を作る
-                        },
-                      ),
 
-                      SizedBox(width: 30),
+                    SizedBox(width: 30),
 
-                      RaisedButton(
-                        child: Text(
-                            '削除'
-                        ),
-                        onPressed: () {
-                          ItemsController.deleteItem(this.item.documentID);
-                          Navigator.pop(context);
-                        },
+                    RaisedButton(
+                      child: Text(
+                          '削除'
                       ),
-                    ],
-                  ),
+                      onPressed: () {
+                        ItemsController.deleteItem(this.item.documentID);
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),

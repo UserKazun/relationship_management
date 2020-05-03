@@ -11,8 +11,13 @@ class MenuScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('Menu'),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(
+            'Menu',
+          style: TextStyle(
+              color: Colors.black
+          ),
+        ),
+        iconTheme: Theme.of(context).iconTheme,
       ),
       body: SafeArea(
         child: Column(

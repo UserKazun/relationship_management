@@ -197,7 +197,9 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
           validator: (value) {
-            if (value.isEmpty) return 'お名前を入力してください。';
+            if (value.length < 10) {
+              return 'Name must be at least 10 characters';
+            }
             return null;
           },
         ),

@@ -24,93 +24,88 @@ class ItemModal extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Stack(
-          fit: StackFit.loose,
+          fit: StackFit.expand,
           children: <Widget>[
-            Column(
-              //crossAxisAlignment: CrossAxisAlignment.stretch,
-              //mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Text(
-                  this.item['categoryKey'] == true
-                      ? '${this.item['categoryKey']}'
-                      : '',
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      this.item['name'],
-                      style: Theme.of(context).textTheme.subtitle,
-                    ),
-                    Text(
-                      '$formattedDateOpened',
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      '趣味',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    // todo: ボタン化する
-                    Icon(
-                        Icons.star
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      '${this.item['hobby']}',
-                    ),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 20),
 
-                SizedBox(height: 77),
-
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    height: 190,
-                    child: Image(
-                      image: AssetImage(
-                          'assets/images/HandsUp.png'
-                      ),
-                    ),
+                  Text(
+                    this.item['categoryKey'] == true
+                        ? '${this.item['categoryKey']}'
+                        : '',
                   ),
-                ),
 
-                Row(
-                  children: <Widget>[
-                    FlatButton(
-                      child: Text(
-                          '編集'
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        this.item['name'],
+                        style: Theme.of(context).textTheme.subtitle,
                       ),
-                      onPressed: () {
-                        // todo: 予めデータがある場合の編集画面を作る
-                      },
-                    ),
-
-                    SizedBox(width: 30),
-
-                    RaisedButton(
-                      child: Text(
-                          '削除'
+                      // todo: ボタン化する
+                      Icon(
+                          Icons.star
                       ),
-                      onPressed: () {
-                        ItemsController.deleteItem(this.item.documentID);
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+
+                  SizedBox(height: 20),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Hobby',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 10),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        '${this.item['hobby']}',
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 220),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      FlatButton(
+                        child: Text(
+                            '編集'
+                        ),
+                        onPressed: () {
+                          // todo: 予めデータがある場合の編集画面を作る
+                        },
+                      ),
+
+                      RaisedButton(
+                        child: Text(
+                            '削除'
+                        ),
+                        onPressed: () {
+                          ItemsController.deleteItem(this.item.documentID);
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

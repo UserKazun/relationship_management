@@ -51,17 +51,21 @@ class ItemsGrid extends StatelessWidget {
           ],
         );
       else
-        return Center(
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 130,
-              ),
-              Image(
-                image: AssetImage('assets/images/Browsing.png')
-              ),
-              Text('最近知り合った人はいませんか? 登録してみましょう。'),
-            ],
+        return Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 130,
+                ),
+                Image(
+                  image: AssetImage('assets/images/Browsing.png')
+                ),
+                Text('Anyone you\'ve known lately?\n'
+                    'Make a note of them so you don\'t forget them.'),
+              ],
+            ),
           ),
         );
     });

@@ -30,7 +30,7 @@ class ItemModal extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                   Text(
                     this.item['categoryKey'] == true
@@ -52,7 +52,7 @@ class ItemModal extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,31 +79,43 @@ class ItemModal extends StatelessWidget {
                   SizedBox(height: 5),
 
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
                         '${this.item['hobby']}',
+                        style: TextStyle(
+                          fontSize: 20
+                        ),
                       ),
+
+                      SizedBox(width: 137),
+
                       Column(
                         children: <Widget>[
                           if (this.item['character'] != '')
                             Text(
                               '①${this.item['character']}',
+                              style: Theme.of(context).textTheme.subhead,
                             ),
                           if (this.item['character2'] != '')
                             Text(
                               '②${this.item['character2']}',
+                              style: Theme.of(context).textTheme.subhead,
                           ),
                           if (this.item['character3'] != '')
                             Text(
                               '③${this.item['character3']}',
+                              style: Theme.of(context).textTheme.subhead,
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
 
-                  SizedBox(height: 180),
+                  Image(
+                    image: AssetImage(
+                      'assets/images/HandsUp.png'
+                    ),
+                  ),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

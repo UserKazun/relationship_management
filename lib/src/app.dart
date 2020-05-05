@@ -42,6 +42,10 @@ class App extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 35
           ),
+          subhead: TextStyle(
+            color: Colors.black,
+            fontSize: 10
+          ),
           button: TextStyle(
               color: primaryColor,
               fontWeight: FontWeight.bold

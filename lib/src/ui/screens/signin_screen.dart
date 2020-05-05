@@ -39,7 +39,7 @@ class _SignInScreenState extends State<SignInScreen> {
         });
         final user =
         await Auth.signIn(_emailController.text, _passwordController.text);
-        if (user != null) {;
+        if (user != null) {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => HomeScreen(user)),

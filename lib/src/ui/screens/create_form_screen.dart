@@ -18,6 +18,8 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
     TextEditingController(),
     TextEditingController(),
     TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
   ];
   List<Widget> _pages;
   double _formProgress = 0.15;
@@ -34,7 +36,9 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
       name: _textControllers[0].text,
       gender: _textControllers[1].text,
       character: _textControllers[2].text,
-      hobby: _textControllers[3].text,
+      character2: _textControllers[3].text,
+      character3: _textControllers[4].text,
+      hobby: _textControllers[5].text,
     );
     Navigator.pop(context);
   }
@@ -63,6 +67,7 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
     @required String description,
     Widget textField,
     Widget option,
+    Widget choiceChip,
     CategoryKeyState categoryKeyState,
     List<String> categoryKeys,
   }) {
@@ -156,10 +161,10 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
                   ),
                   Consumer<CategoryKeyState>(
                     builder: (_, categoryKeyState, __) => RaisedButton(
-                      child: Text(pageIndex == 3 ? '追加' : '次へ'),
+                      child: Text(pageIndex == 5 ? '追加' : '次へ'),
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
-                          if (pageIndex == 3) {
+                          if (pageIndex == 5) {
                             _submitItem();
                             categoryKeyState.updateCategoryKey(
                                 _textControllers[1].text
@@ -195,7 +200,11 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
           validator: (value) {
-            if (value.isEmpty) return 'お名前を入力してください。';
+            if (value.length > 10) {
+              return 'Name should be 10 characters or less';
+            } else if (value.isEmpty) {
+              return 'Please enter name in 10 characters or less';
+            }
             return null;
           },
         ),
@@ -215,7 +224,7 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
       buildPage(
           pageIndex: 2,
           title: '特徴',
-          description: 'お相手の特徴を入力してください。',
+          description: 'お相手の1つ目の特徴を入力してください。',
           textField: TextFormField(
             controller: _textControllers[2],
             textCapitalization: TextCapitalization.sentences,
@@ -226,11 +235,37 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
       ),
 
       buildPage(
-          pageIndex: 3,
+        pageIndex: 3,
+        title: '特徴',
+        description: 'お相手の2つ目の特徴を入力してください。',
+        textField: TextFormField(
+          controller: _textControllers[3],
+          textCapitalization: TextCapitalization.sentences,
+          autofocus: true,
+          decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+        ),
+        // todo: 特徴の候補を表示
+      ),
+
+      buildPage(
+        pageIndex: 4,
+        title: '特徴',
+        description: 'お相手の3つ目の特徴を入力してください。',
+        textField: TextFormField(
+          controller: _textControllers[4],
+          textCapitalization: TextCapitalization.sentences,
+          autofocus: true,
+          decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+        ),
+        // todo: 特徴の候補を表示
+      ),
+
+      buildPage(
+          pageIndex: 5,
           title: '趣味',
           description: 'お相手の趣味を入力してください。',
           textField: TextFormField(
-            controller: _textControllers[3],
+            controller: _textControllers[5],
             textCapitalization: TextCapitalization.sentences,
             autofocus: true,
             decoration: InputDecoration(prefixIcon: Icon(Icons.audiotrack)),

@@ -20,88 +20,93 @@ class ItemModal extends StatelessWidget {
         height: 450,
         margin: EdgeInsets.only(left: 20, right: 20),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).backgroundColor,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Stack(
-          fit: StackFit.loose,
+          fit: StackFit.expand,
           children: <Widget>[
-            Column(
-              //crossAxisAlignment: CrossAxisAlignment.stretch,
-              //mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Text(
-                  this.item['categoryKey'] == true
-                      ? '${this.item['categoryKey']}'
-                      : '',
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      this.item['name'],
-                      style: Theme.of(context).textTheme.subtitle,
-                    ),
-                    Text(
-                      '$formattedDateOpened',
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      '趣味',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    // todo: ボタン化する
-                    Icon(
-                        Icons.star
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      '${this.item['hobby']}',
-                    ),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 20),
 
-                SizedBox(height: 77),
-
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    height: 190,
-                    child: Image(
-                      image: AssetImage(
-                          'assets/images/HandsUp.png'
-                      ),
-                    ),
+                  Text(
+                    this.item['categoryKey'] == true
+                        ? '${this.item['categoryKey']}'
+                        : '',
                   ),
-                ),
 
-                Container(
-                  height: 83,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.elliptical(
-                            MediaQuery.of(context).size.width * 0.50, 18
-                        ),
-                        topRight: Radius.elliptical(
-                            MediaQuery.of(context).size.width * 0.50, 18
-                        ),
-                        bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular(10.0)
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        this.item['name'],
+                        style: Theme.of(context).textTheme.subtitle,
+                      ),
+                      // todo: ボタン化する
+                      Icon(
+                          Icons.star
+                      ),
+                    ],
                   ),
-                  child: Row(
+
+                  SizedBox(height: 20),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Hobby',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text(
+                        'Characters',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        '${this.item['hobby']}',
+                      ),
+                      Column(
+                        children: <Widget>[
+                          if (this.item['character'] != '')
+                            Text(
+                              '①${this.item['character']}',
+                            ),
+                          if (this.item['character2'] != '')
+                            Text(
+                              '②${this.item['character2']}',
+                          ),
+                          if (this.item['character3'] != '')
+                            Text(
+                              '③${this.item['character3']}',
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+
+                  SizedBox(height: 180),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       FlatButton(
                         child: Text(
@@ -111,8 +116,6 @@ class ItemModal extends StatelessWidget {
                           // todo: 予めデータがある場合の編集画面を作る
                         },
                       ),
-
-                      SizedBox(width: 30),
 
                       RaisedButton(
                         child: Text(
@@ -125,8 +128,8 @@ class ItemModal extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

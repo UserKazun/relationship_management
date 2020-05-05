@@ -8,6 +8,8 @@ abstract class ItemsController {
     String name,
     String gender,
     String character,
+    String character2,
+    String character3,
     String hobby,
     bool isLiked,
   }) async {
@@ -18,6 +20,8 @@ abstract class ItemsController {
       'name': name,
       'gender': gender,
       'character': character,
+      'character2': character2,
+      'character3': character3,
       'hobby': hobby,
       'time': DateTime.now(),
       'isLiked': isLiked,

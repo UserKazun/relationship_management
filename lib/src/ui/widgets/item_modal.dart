@@ -65,10 +65,18 @@ class ItemModal extends StatelessWidget {
                             fontWeight: FontWeight.bold
                         ),
                       ),
+                      Text(
+                        'Characters',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
                     ],
                   ),
 
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,10 +84,26 @@ class ItemModal extends StatelessWidget {
                       Text(
                         '${this.item['hobby']}',
                       ),
+                      Column(
+                        children: <Widget>[
+                          if (this.item['character'] != '')
+                            Text(
+                              '①${this.item['character']}',
+                            ),
+                          if (this.item['character2'] != '')
+                            Text(
+                              '②${this.item['character2']}',
+                          ),
+                          if (this.item['character3'] != '')
+                            Text(
+                              '③${this.item['character3']}',
+                          ),
+                        ],
+                      )
                     ],
                   ),
 
-                  SizedBox(height: 220),
+                  SizedBox(height: 180),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

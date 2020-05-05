@@ -222,16 +222,15 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
       ),
 
       buildPage(
-          pageIndex: 2,
-          title: '特徴',
-          description: 'お相手の1つ目の特徴を入力してください。',
-          textField: TextFormField(
-            controller: _textControllers[2],
-            textCapitalization: TextCapitalization.sentences,
-            autofocus: true,
-            decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
-          ),
-        // todo: 特徴の候補を表示
+        pageIndex: 2,
+        title: '特徴',
+        description: 'お相手の1つ目の特徴を入力してください。',
+        textField: TextFormField(
+          controller: _textControllers[2],
+          textCapitalization: TextCapitalization.sentences,
+          autofocus: true,
+          decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+        ),
       ),
 
       buildPage(
@@ -244,7 +243,6 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
         ),
-        // todo: 特徴の候補を表示
       ),
 
       buildPage(

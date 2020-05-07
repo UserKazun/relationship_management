@@ -62,7 +62,7 @@ class ItemCard extends StatelessWidget {
                   ),
                 ),
                 Chip(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Theme.of(context).primaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
                         Radius.circular(8)
@@ -70,6 +70,27 @@ class ItemCard extends StatelessWidget {
                   ),
                   label: Text(
                     '特徴'
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      if (this.item['character'] != '')
+                        Text(
+                          '①${this.item['character']}',
+                          style: Theme.of(context).textTheme.subhead,
+                        ),
+                      if (this.item['character2'] != '')
+                        Text(
+                          '②${this.item['character2']}',
+                          style: Theme.of(context).textTheme.subhead,
+                        ),
+                      if (this.item['character3'] != '')
+                        Text(
+                          '③${this.item['character3']}',
+                          style: Theme.of(context).textTheme.subhead,
+                        ),
+                    ],
                   ),
                 ),
                 Expanded(

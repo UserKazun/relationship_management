@@ -7,6 +7,7 @@ import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/providers/filter_state.dart';
 import 'package:relationship_management/src/ui/widgets/items_grid.dart';
 import 'package:relationship_management/src/ui/widgets/items_info.dart';
+import 'package:relationship_management/src/ui/widgets/loader.dart';
 
 class ItemsContainer extends StatefulWidget {
   @override
@@ -22,10 +23,7 @@ class _ItemContainerState extends State<ItemsContainer> {
       builder: (context, itemsData, child) {
         if (itemsData == null)
           return Center(
-            child: SpinKitDoubleBounce(
-              color: Colors.red,
-              size: 50.0,
-            ),
+            child: Loader(),
           );
         else
           return ChangeNotifierProvider<FilterState>(

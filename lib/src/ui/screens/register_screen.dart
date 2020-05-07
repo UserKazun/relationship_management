@@ -4,6 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
+import 'package:relationship_management/src/ui/widgets/loader.dart';
 
 class RegisterScreen extends StatefulWidget {
   static const String routeName = "/register_screen";
@@ -67,10 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
       body: loading
           ? Center(
-        child: SpinKitDoubleBounce(
-          color: Theme.of(context).primaryColor,
-          size: 50.0,
-        ),
+        child: Loader(),
       )
       : Stack(
         fit: StackFit.expand,

@@ -9,6 +9,7 @@ import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
 import 'package:relationship_management/src/ui/screens/register_screen.dart';
 import 'package:relationship_management/src/ui/screens/signin_screen.dart';
+import 'package:relationship_management/src/ui/widgets/loader.dart';
 
 class Welcome extends StatefulWidget {
   static const String routeName = "/welcome";
@@ -25,10 +26,7 @@ class _WelcomeState extends State<Welcome> {
     return Scaffold(
       body: loading
           ? Center(
-        child: SpinKitDoubleBounce(
-          color: Theme.of(context).primaryColor,
-          size: 50.0,
-        ),
+        child: Loader(),
       )
       : Stack(
         fit: StackFit.expand,

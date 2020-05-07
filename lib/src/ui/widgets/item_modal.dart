@@ -94,17 +94,23 @@ class ItemModal extends StatelessWidget {
                           if (this.item['character'] != '')
                             Text(
                               '①${this.item['character']}',
-                              style: Theme.of(context).textTheme.subhead,
+                              style: TextStyle(
+                                  fontSize: 15
+                              ),
                             ),
                           if (this.item['character2'] != '')
                             Text(
                               '②${this.item['character2']}',
-                              style: Theme.of(context).textTheme.subhead,
+                              style: TextStyle(
+                                  fontSize: 15
+                              ),
                           ),
                           if (this.item['character3'] != '')
                             Text(
                               '③${this.item['character3']}',
-                              style: Theme.of(context).textTheme.subhead,
+                              style: TextStyle(
+                                  fontSize: 15
+                              ),
                           ),
                         ],
                       ),

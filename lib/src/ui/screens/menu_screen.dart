@@ -24,14 +24,24 @@ class MenuScreen extends StatelessWidget {
           children: <Widget>[
             ListTile(
               leading: Icon(Icons.verified_user),
-              title: Text('プライバシーポリシー'),
+              title: Text(
+                  'プライバシーポリシー',
+                  style: TextStyle(
+                      fontSize: 15
+                  ),
+              ),
               onTap: () {
 
               },
             ),
             ListTile(
               leading: Icon(Icons.power_settings_new),
-              title: Text('ログアウト'),
+              title: Text(
+                  'ログアウト',
+                style: TextStyle(
+                    fontSize: 15
+                ),
+              ),
               onTap: () {
                 _showSignOutDialog(context);
               },

@@ -267,6 +267,12 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
             textCapitalization: TextCapitalization.sentences,
             autofocus: true,
             decoration: InputDecoration(prefixIcon: Icon(Icons.audiotrack)),
+            validator: (value) {
+              if (value.length < 2) {
+                return 'Hobby should be 2 characters or less';
+              }
+              return null;
+            },
           ),
         // todo: 趣味の候補を表示
       ),

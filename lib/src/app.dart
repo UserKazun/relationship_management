@@ -5,7 +5,6 @@ import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
 import 'package:relationship_management/src/ui/screens/register_screen.dart';
 import 'package:relationship_management/src/ui/screens/signin_screen.dart';
 import 'package:relationship_management/src/ui/screens/welcome.dart';
-import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 
 import 'services/auth.dart';
 
@@ -75,7 +74,6 @@ class App extends StatelessWidget {
         RegisterScreen.routeName: (_) => RegisterScreen(),
         SignInScreen.routeName: (_) => SignInScreen(),
         ItemCreateScreen.routeName: (_) => ItemCreateScreen(),
-        MenuScreen.routeName: (_) => MenuScreen()
       },
       home: FutureBuilder<FirebaseUser>(
         future: Auth.getCurrentUser(),

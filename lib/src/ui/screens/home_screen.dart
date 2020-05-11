@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
-import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/welcome.dart';
 import 'package:relationship_management/src/ui/widgets/items_container.dart';

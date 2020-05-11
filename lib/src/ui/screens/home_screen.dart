@@ -8,6 +8,7 @@ import 'package:relationship_management/src/controllers/items_controller.dart';
 import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
 import 'package:relationship_management/src/ui/screens/menu_screen.dart';
 import 'package:relationship_management/src/services/auth.dart';
+import 'package:relationship_management/src/ui/screens/welcome.dart';
 import 'package:relationship_management/src/ui/widgets/items_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,9 +28,9 @@ class HomeScreen extends StatelessWidget {
             left: 5,
             child: IconButton(
               color: Theme.of(context).accentColor,
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.power_settings_new),
               onPressed: () {
-                Navigator.of(context).pushNamed(MenuScreen.routeName);
+                _showSignOutDialog(context);
               },
             ),
           ),
@@ -109,5 +110,32 @@ void _showEmailConfirmDialog(BuildContext context) {
           ],
         );
     }
+  );
+}
+
+void _showSignOutDialog(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text('ログアウトしますか？'),
+          content: Text('データは消えません。'),
+          actions: <Widget>[
+            CupertinoDialogAction(
+              child: Text('戻る'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            CupertinoDialogAction(
+              child: Text('ログアウト'),
+              onPressed: () {
+                Auth.signOut();
+                Navigator.pushReplacementNamed(context, Welcome.routeName);
+              },
+            ),
+          ],
+        );
+      }
   );
 }

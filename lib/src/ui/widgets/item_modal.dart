@@ -30,13 +30,7 @@ class ItemModal extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 10),
-
-                  Text(
-                    this.item['categoryKey'] == true
-                        ? '${this.item['categoryKey']}'
-                        : '',
-                  ),
+                  SizedBox(height: 35),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,10 +38,6 @@ class ItemModal extends StatelessWidget {
                       Text(
                         this.item['name'],
                         style: Theme.of(context).textTheme.subtitle,
-                      ),
-                      // todo: ボタン化する
-                      Icon(
-                          Icons.star
                       ),
                     ],
                   ),
@@ -58,7 +48,7 @@ class ItemModal extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Hobby',
+                        '趣味',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 30,
@@ -66,7 +56,7 @@ class ItemModal extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Characters',
+                        '性格',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 30,
@@ -87,7 +77,7 @@ class ItemModal extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(width: 137),
+                      SizedBox(width: 197),
 
                       Column(
                         children: <Widget>[
@@ -126,14 +116,7 @@ class ItemModal extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      FlatButton(
-                        child: Text(
-                            '編集'
-                        ),
-                        onPressed: () {
-                          // todo: 予めデータがある場合の編集画面を作る
-                        },
-                      ),
+
 
                       RaisedButton(
                         child: Text(

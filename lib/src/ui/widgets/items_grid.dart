@@ -60,7 +60,7 @@ class ItemsGrid extends StatelessWidget {
                   height: 130,
                 ),
                 Image(
-                  image: AssetImage('assets/images/Browsing.png')
+                  image: AssetImage('assets/images/Teamwork.png')
                 ),
                 Text('Anyone you\'ve known lately?\n'
                     'Make a note of them so you don\'t forget them.'),

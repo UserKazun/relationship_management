@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
-import 'package:relationship_management/src/providers/category_key_state.dart';
 
 class CreateFormScreen extends StatefulWidget {
   @override
@@ -68,7 +67,6 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
     Widget textField,
     Widget option,
     Widget choiceChip,
-    CategoryKeyState categoryKeyState,
     List<String> categoryKeys,
   }) {
     List<Widget> generateCategoryKey() {
@@ -159,22 +157,17 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
                       }
                     },
                   ),
-                  Consumer<CategoryKeyState>(
-                    builder: (_, categoryKeyState, __) => RaisedButton(
-                      child: Text(pageIndex == 5 ? '追加' : '次へ'),
-                      onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          if (pageIndex == 5) {
-                            _submitItem();
-                            categoryKeyState.updateCategoryKey(
-                                _textControllers[1].text
-                            );
-                          } else {
-                            goNext();
-                          }
+                  RaisedButton(
+                    child: Text(pageIndex == 5 ? '追加' : '次へ'),
+                    onPressed: () {
+                      if (_formKey.currentState.validate()) {
+                        if (pageIndex == 5) {
+                          _submitItem();
+                        } else {
+                          goNext();
                         }
-                      },
-                    ),
+                      }
+                    },
                   ),
                 ],
               ),
@@ -187,7 +180,6 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
 
   List<Widget> buildPages(
       BuildContext context,
-      CategoryKeyState categoryKeyState,
   ) {
     _pages = [
       buildPage(
@@ -292,16 +284,12 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
             valueColor: AlwaysStoppedAnimation<Color>(
               Theme.of(context).primaryColor)),
           Expanded(
-            child: ChangeNotifierProvider(
-              create: (context) => CategoryKeyState(),
-              child: Consumer<CategoryKeyState>(
-                builder: (context, categoryKeyState, __) => PageView(
-                  controller: _pageViewController,
-                  physics: NeverScrollableScrollPhysics(),
-                  children: buildPages(
-                    context,
-                    categoryKeyState,
-                  ),
+            child: StreamBuilder(
+              builder: (context, __) => PageView(
+                controller: _pageViewController,
+                physics: NeverScrollableScrollPhysics(),
+                children: buildPages(
+                  context,
                 ),
               ),
             ),

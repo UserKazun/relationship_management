@@ -62,8 +62,8 @@ class ItemsGrid extends StatelessWidget {
                 Image(
                   image: AssetImage('assets/images/Teamwork.png')
                 ),
-                Text('Anyone you\'ve known lately?\n'
-                    'Make a note of them so you don\'t forget them.'),
+                Text('最近知り合った方はいませんか？\n'
+                    '忘れないうちに記録しておきましょう。'),
               ],
             ),
           ),

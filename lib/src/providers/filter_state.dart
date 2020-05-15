@@ -6,19 +6,4 @@ class FilterState with ChangeNotifier {
   String nameFilter = '';
   bool filterEnabled = false;
 
-  void filterByName(String name) {
-    filterEnabled = !filterEnabled;
-    if (filterEnabled)
-      nameFilter = name;
-    else
-      nameFilter=  '';
-    notifyListeners();
-  }
-
-  void removeFilter() {
-    nameFilter = '';
-    filterEnabled = false;
-    notifyListeners();
-  }
-
 }

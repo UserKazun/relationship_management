@@ -4,7 +4,6 @@ import 'package:relationship_management/src/services/auth.dart';
 
 abstract class ItemsController {
   static Future createItem({
-    String categoryKey,
     String name,
     String gender,
     String character,
@@ -16,7 +15,6 @@ abstract class ItemsController {
     FirebaseUser user = await Auth.getCurrentUser();
     return Firestore.instance.collection('items').add({
       'uid': user.uid,
-      'categoryKey': categoryKey,
       'name': name,
       'gender': gender,
       'character': character,

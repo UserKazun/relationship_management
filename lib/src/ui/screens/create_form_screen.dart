@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:provider/provider.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
 
 class CreateFormScreen extends StatefulWidget {
@@ -31,7 +30,6 @@ class _CreateFormScreenState extends State<CreateFormScreen> {
 
   void _submitItem() {
     ItemsController.createItem(
-      categoryKey: '',
       name: _textControllers[0].text,
       gender: _textControllers[1].text,
       character: _textControllers[2].text,

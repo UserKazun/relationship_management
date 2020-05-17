@@ -56,9 +56,7 @@ class ItemCard extends StatelessWidget {
                 Text(
                   this.item['name'],
                   style: GoogleFonts.kosugiMaru(
-                    textStyle: TextStyle(
-                        fontSize: 15
-                    ),
+                    textStyle: Theme.of(context).textTheme.headline5
                   ),
                 ),
                 Chip(

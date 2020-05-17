@@ -7,6 +7,7 @@ import 'package:relationship_management/src/ui/widgets/item_card.dart';
 
 class ItemsGrid extends StatelessWidget {
   final bool showOpenItems;
+
   ItemsGrid(this.showOpenItems);
 
   @override

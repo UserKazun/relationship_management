@@ -32,22 +32,6 @@ class _ItemContainerState extends State<ItemsContainer> {
                 ItemsInfo(
                   ItemsController.filterAllItems(itemsData.documents)
                 ),
-                Stack(
-                  alignment: AlignmentDirectional.topStart,
-                  children: <Widget>[
-                    Container(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            '',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
                 Expanded(
                   child: PageView(
                     onPageChanged: (int page) {

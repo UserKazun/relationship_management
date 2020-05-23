@@ -27,23 +27,34 @@ class App extends StatelessWidget {
         appBarTheme: AppBarTheme(color: Color(0xFFE0E5EC)),
         iconTheme: IconThemeData(color: Colors.black),
         textTheme: TextTheme(
-          title: TextStyle(
+          headline1: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w700,
           ),
-          subtitle: TextStyle(
+          headline2: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 25
           ),
-          headline: TextStyle(
+          headline3: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 35
           ),
-          subhead: TextStyle(
+          headline4: TextStyle(
             color: Colors.black,
             fontSize: 12
+          ),
+          headline5: TextStyle(
+            fontSize: 15
+          ),
+          bodyText1: TextStyle(
+            fontSize: 20
+          ),
+          bodyText2: TextStyle(
+              color: Colors.black,
+              fontSize: 30,
+              fontWeight: FontWeight.bold
           ),
           button: TextStyle(
               color: primaryColor,

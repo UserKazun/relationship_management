@@ -37,7 +37,7 @@ class ItemModal extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         this.item['name'],
-                        style: Theme.of(context).textTheme.subtitle,
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                     ],
                   ),
@@ -49,19 +49,11 @@ class ItemModal extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         '趣味',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold
-                        ),
+                        style: Theme.of(context).textTheme.bodyText2
                       ),
                       Text(
                         '性格',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold
-                        ),
+                          style: Theme.of(context).textTheme.bodyText2
                       ),
                     ],
                   ),
@@ -72,9 +64,7 @@ class ItemModal extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         '${this.item['hobby']}',
-                        style: TextStyle(
-                          fontSize: 20
-                        ),
+                        style: Theme.of(context).textTheme.bodyText1
                       ),
 
                       SizedBox(width: 197),
@@ -84,23 +74,17 @@ class ItemModal extends StatelessWidget {
                           if (this.item['character'] != '')
                             Text(
                               '①${this.item['character']}',
-                              style: TextStyle(
-                                  fontSize: 15
-                              ),
+                              style: Theme.of(context).textTheme.headline5
                             ),
                           if (this.item['character2'] != '')
                             Text(
                               '②${this.item['character2']}',
-                              style: TextStyle(
-                                  fontSize: 15
-                              ),
+                                style: Theme.of(context).textTheme.headline5
                           ),
                           if (this.item['character3'] != '')
                             Text(
                               '③${this.item['character3']}',
-                              style: TextStyle(
-                                  fontSize: 15
-                              ),
+                                style: Theme.of(context).textTheme.headline5
                           ),
                         ],
                       ),

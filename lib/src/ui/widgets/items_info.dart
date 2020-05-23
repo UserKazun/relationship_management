@@ -45,7 +45,7 @@ class ItemsInfo extends StatelessWidget {
         children: <Widget>[
           Text(
             'Home',
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.headline2,
           ),
           Spacer(),
           SizedBox(
@@ -53,16 +53,11 @@ class ItemsInfo extends StatelessWidget {
           ),
           Text(
             getHeaderText(items),
-            style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 35
-            ),
+            style: Theme.of(context).textTheme.headline3
           ),
           SizedBox(
             height: 10,
           ),
-          // todo: カテゴリーわけ
         ],
       ),
     );

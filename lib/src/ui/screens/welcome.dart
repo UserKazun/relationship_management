@@ -41,7 +41,7 @@ class _WelcomeState extends State<Welcome> {
                     'Welcome',
                     style: Theme.of(context)
                         .textTheme
-                        .headline
+                        .headline2
                         .copyWith(color: Theme.of(context).primaryColor),
                   ),
                   SizedBox(height: 100),
@@ -92,7 +92,10 @@ class _WelcomeState extends State<Welcome> {
                             ),
                             Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text('OR'),
+                              child: Text(
+                                  'OR',
+                                style: Theme.of(context).textTheme.headline5,
+                              ),
                             ),
                             Expanded(child: Divider(color: Colors.black))
                           ],

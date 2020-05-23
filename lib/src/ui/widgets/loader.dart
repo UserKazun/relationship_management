@@ -106,7 +106,7 @@ class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
 
     controller.addListener(() {
       setState(() {
-        //print(animation_1.value);
+
       });
     });
 
@@ -286,10 +286,11 @@ class _Item extends StatelessWidget {
       child: Transform.rotate(
         angle: 0.0,
         child: Container(
-          width: 20,
-          height: 20,
+          width: 30,
+          height: 30,
           child: Text(
-            text
+            text,
+            style: Theme.of(context).textTheme.bodyText1,
           ),
         ),
       ),

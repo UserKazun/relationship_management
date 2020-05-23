@@ -50,9 +50,7 @@ class ItemCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  this.item['categoryKey'],
-                ),
+                SizedBox(height: 10),
                 Text(
                   this.item['name'],
                   style: GoogleFonts.kosugiMaru(
@@ -67,7 +65,8 @@ class ItemCard extends StatelessWidget {
                     ),
                   ),
                   label: Text(
-                    '特徴'
+                    '特徴',
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
                 Container(
@@ -76,17 +75,17 @@ class ItemCard extends StatelessWidget {
                       if (this.item['character'] != '')
                         Text(
                           '①${this.item['character']}',
-                          style: Theme.of(context).textTheme.subhead,
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       if (this.item['character2'] != '')
                         Text(
                           '②${this.item['character2']}',
-                          style: Theme.of(context).textTheme.subhead,
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       if (this.item['character3'] != '')
                         Text(
                           '③${this.item['character3']}',
-                          style: Theme.of(context).textTheme.subhead,
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                     ],
                   ),
@@ -98,6 +97,7 @@ class ItemCard extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         timeago.format(this.item['time'].toDate()),
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                     ],
                   ),

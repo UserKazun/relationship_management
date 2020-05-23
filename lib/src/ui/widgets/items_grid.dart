@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:relationship_management/src/providers/filter_state.dart';
@@ -64,7 +65,9 @@ class ItemsGrid extends StatelessWidget {
                   image: AssetImage('assets/images/Teamwork.png')
                 ),
                 Text('最近知り合った方はいませんか？\n'
-                    '忘れないうちに記録しておきましょう。'),
+                    '忘れないうちに記録しておきましょう。',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
               ],
             ),
           ),

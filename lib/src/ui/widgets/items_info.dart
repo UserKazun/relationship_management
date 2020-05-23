@@ -58,7 +58,6 @@ class ItemsInfo extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          // todo: カテゴリーわけ
         ],
       ),
     );

@@ -9,16 +9,6 @@ class ItemsInfo extends StatelessWidget {
 
   ItemsInfo(this.items);
 
-  String getAllItemCount(
-      List<DocumentSnapshot> items) {
-    int allItem = 0;
-    for (DocumentSnapshot item in items) {
-      if (item['categoryKey'] == '')
-        allItem += item['categoryKey'];
-    }
-    return allItem.toString();
-  }
-
   String getHeaderText(List<DocumentSnapshot> items) {
     if (items.length == 1) {
       String text = '${items.length} person';

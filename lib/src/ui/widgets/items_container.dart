@@ -40,7 +40,7 @@ class _ItemContainerState extends State<ItemsContainer> {
                       });
                     },
                     physics: ClampingScrollPhysics(),
-                    children: <Widget>[ItemsGrid(true), ItemsGrid(false)],
+                    children: <Widget>[ItemsGrid(true)],
                   ),
                 )
               ],

@@ -30,6 +30,18 @@ class _WelcomeState extends State<Welcome> {
       : Stack(
         fit: StackFit.expand,
         children: <Widget>[
+          Transform.translate(
+            offset: Offset(
+                -1.0, 313.0
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: const AssetImage('assets/images/Divider.png'),
+                ),
+              ),
+            ),
+          ),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(32.0),

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
-import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
+import 'package:relationship_management/src/ui/screens/create_item_screen.dart';
 import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/welcome.dart';
 import 'package:relationship_management/src/ui/widgets/items_container.dart';
@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
         onPressed: () async {
           bool flag = await Auth.isEmailVerified();
           if (flag)
-            Navigator.pushNamed(context, ItemCreateScreen.routeName);
+            Navigator.pushNamed(context, CreateItemScreen.routeName);
           else
             _showEmailConfirmDialog(context);
         },

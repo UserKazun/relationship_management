@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:relationship_management/src/ui/screens/welcome.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   static const routeName = "/on_boarding";
@@ -111,7 +112,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ),
         ) : InkWell(
           onTap: () {
-            print("Start");
+            Navigator.pushNamed(context, Welcome.routeName);
           },
           child: Container(
             height: Platform.isIOS ? 70 : 60,

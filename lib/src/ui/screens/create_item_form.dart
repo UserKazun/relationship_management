@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
 
-class CreateFormScreen extends StatefulWidget {
+class CreateItemForm extends StatefulWidget {
   @override
-  _CreateFormScreenState createState() => _CreateFormScreenState();
+  _CreateItemFormState createState() => _CreateItemFormState();
 }
 
-class _CreateFormScreenState extends State<CreateFormScreen> {
+class _CreateItemFormState extends State<CreateItemForm> {
   final _formKey = GlobalKey<FormState>();
   final _pageViewController = PageController();
   final _textControllers = [

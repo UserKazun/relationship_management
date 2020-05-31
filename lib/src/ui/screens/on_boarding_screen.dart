@@ -55,13 +55,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             },
             children: <Widget>[
               _SlideTile(
-
+                imagePath: "assets/images/Character.png",
+                title: "ようこそ",
+                desc: "説明文",
               ),
               _SlideTile(
-
+                imagePath: "assets/images/Teamwork.png",
+                title: "タイトル",
+                desc: "説明文",
               ),
               _SlideTile(
-
+                imagePath: "assets/images/people_in_couple.png",
+                title: "タイトル",
+                desc: "説明文",
               ),
             ],
           ),

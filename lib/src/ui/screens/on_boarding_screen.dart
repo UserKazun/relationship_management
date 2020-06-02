@@ -12,6 +12,7 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  final _formKey = GlobalKey<FormState>();
   int slideIndex = 0;
   PageController controller;
 
@@ -94,7 +95,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Container(
                 child: Row(
                   children: <Widget>[
-                    for (int i = 0; i < 3; i++) i == slideIndex 
+                    for (int i = 0; i < 3; i++) i == slideIndex
                         ? _buildPageIndicator(true)
                         : _buildPageIndicator(false)
                   ],

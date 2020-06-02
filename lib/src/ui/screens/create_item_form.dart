@@ -21,7 +21,6 @@ class _CreateItemFormState extends State<CreateItemForm> {
   ];
   List<Widget> _pages;
   double _formProgress = 0.15;
-  // bool userOwesFriend = false;
 
   @override
   void initState() {
@@ -99,7 +98,7 @@ class _CreateItemFormState extends State<CreateItemForm> {
         children: <Widget>[
           Text(
             title,
-            style: Theme.of(context).textTheme.headline,
+            style: Theme.of(context).textTheme.headline1,
           ),
           Text(description),
           if (categoryKeys != null && categoryKeys.length > 0)

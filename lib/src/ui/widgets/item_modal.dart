@@ -17,7 +17,7 @@ class ItemModal extends StatelessWidget {
 
     return Center(
       child: Container(
-        height: 450,
+        height: MediaQuery.of(context).size.height - 260,
         margin: EdgeInsets.only(left: 20, right: 20),
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,

@@ -66,29 +66,6 @@ class _CreateItemFormState extends State<CreateItemForm> {
     Widget choiceChip,
     List<String> categoryKeys,
   }) {
-    List<Widget> generateCategoryKey() {
-      if (categoryKeys == null) return [];
-      List<Widget> chips = [];
-      for (String categoryKey in categoryKeys) {
-        chips.add(Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: ActionChip(
-            label: Text(categoryKey),
-            backgroundColor: Colors.white,
-            elevation: 1,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                  Radius.circular(8)
-              ),
-            ),
-            onPressed: () {
-              _textControllers[pageIndex].text = categoryKey;
-            },
-          ),
-        ));
-      }
-      return chips;
-    }
 
     return Padding(
       padding: const EdgeInsets.all(28.0),
@@ -98,37 +75,12 @@ class _CreateItemFormState extends State<CreateItemForm> {
         children: <Widget>[
           Text(
             title,
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline2,
           ),
-          Text(description),
-          if (categoryKeys != null && categoryKeys.length > 0)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Flexible(
-                  child: AnimationLimiter(
-                    child: Container(
-                      height: 50,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: AnimationConfiguration.toStaggeredList(
-                            delay: Duration(milliseconds: 150),
-                            duration: Duration(milliseconds: 200),
-                            childAnimationBuilder: (widget) => SlideAnimation(
-                              horizontalOffset: 70.0,
-                              child: FadeInAnimation(
-                                duration: Duration(milliseconds: 300),
-                                child: widget,
-                              ),
-                            ),
-                            children: generateCategoryKey(),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          Text(
+            description,
+            style: Theme.of(context).textTheme.headline5,
+          ),
           SizedBox(height: 12),
 
           Row(
@@ -190,9 +142,9 @@ class _CreateItemFormState extends State<CreateItemForm> {
           decoration: InputDecoration(prefixIcon: Icon(Icons.person)),
           validator: (value) {
             if (value.length > 10) {
-              return 'Name should be 10 characters or less';
+              return 'お相手のお名前は10文字以下で入力してください。';
             } else if (value.isEmpty) {
-              return 'Please enter name in 10 characters or less';
+              return 'お相手のお名前を10文字以下で入力してください。';
             }
             return null;
           },
@@ -244,7 +196,6 @@ class _CreateItemFormState extends State<CreateItemForm> {
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
         ),
-        // todo: 特徴の候補を表示
       ),
 
       buildPage(
@@ -258,12 +209,11 @@ class _CreateItemFormState extends State<CreateItemForm> {
             decoration: InputDecoration(prefixIcon: Icon(Icons.audiotrack)),
             validator: (value) {
               if (value.length < 2) {
-                return 'Hobby should be 2 characters or less';
+                return '趣味は最低2文字で入力してください。';
               }
               return null;
             },
           ),
-        // todo: 趣味の候補を表示
       ),
     ];
     return _pages;

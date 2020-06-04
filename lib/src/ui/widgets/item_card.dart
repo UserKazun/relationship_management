@@ -53,9 +53,7 @@ class ItemCard extends StatelessWidget {
                 SizedBox(height: 10),
                 Text(
                   this.item['name'],
-                  style: GoogleFonts.kosugiMaru(
-                    textStyle: Theme.of(context).textTheme.headline5
-                  ),
+                  style: Theme.of(context).textTheme.headline5
                 ),
                 Chip(
                   backgroundColor: Theme.of(context).primaryColor,

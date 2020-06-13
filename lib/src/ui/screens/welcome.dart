@@ -8,7 +8,6 @@ import 'package:relationship_management/src/services/auth.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
 import 'package:relationship_management/src/ui/screens/register_screen.dart';
 import 'package:relationship_management/src/ui/screens/signin_screen.dart';
-import 'package:relationship_management/src/ui/widgets/fade_slide_transition.dart';
 import 'package:relationship_management/src/ui/widgets/loader.dart';
 
 class Welcome extends StatefulWidget {

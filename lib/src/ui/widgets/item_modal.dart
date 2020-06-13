@@ -90,18 +90,14 @@ class ItemModal extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   Image(
                     image: AssetImage(
                       'assets/images/HandsUp.png'
                     ),
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-
-
                       RaisedButton(
                         child: Text(
                             '削除'

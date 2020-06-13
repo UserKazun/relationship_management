@@ -29,6 +29,7 @@ dependencies:
   flutter_staggered_animations:
   flutter_typeahead:
   flutter_spinkit: ^4.1.2+1
+  page_transition: ^1.1.5
   timeago: ^2.0.26
   provider: ^4.0.4
   test_api: ^0.2.15

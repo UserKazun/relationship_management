@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:relationship_management/src/ui/widgets/item_modal.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -25,8 +24,8 @@ class ItemCard extends StatelessWidget {
               spreadRadius: -3.0,
               blurRadius: 10.0,
               offset: Offset(-2.0, -2.0)
-          )
-        ]
+          ),
+        ],
       ),
       child: Card(
         color: Theme.of(context).cardColor,
@@ -53,9 +52,7 @@ class ItemCard extends StatelessWidget {
                 SizedBox(height: 10),
                 Text(
                   this.item['name'],
-                  style: GoogleFonts.kosugiMaru(
-                    textStyle: Theme.of(context).textTheme.headline5
-                  ),
+                  style: Theme.of(context).textTheme.headline5
                 ),
                 Chip(
                   backgroundColor: Theme.of(context).primaryColor,

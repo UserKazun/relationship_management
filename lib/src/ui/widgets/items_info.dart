@@ -10,13 +10,9 @@ class ItemsInfo extends StatelessWidget {
   ItemsInfo(this.items);
 
   String getHeaderText(List<DocumentSnapshot> items) {
-    if (items.length == 1) {
-      String text = '${items.length} person';
-      return text;
-    } else {
-      String text = '${items.length} people';
-      return text;
-    }
+    String text = '${items.length} 人';
+
+    return text;
   }
 
   @override

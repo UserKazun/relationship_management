@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:relationship_management/src/ui/screens/create_form_screen.dart';
+import 'package:relationship_management/src/ui/screens/create_item_form.dart';
 
-class ItemCreateScreen extends StatelessWidget {
+class CreateItemScreen extends StatelessWidget {
   static const String routeName = 'create_screen';
 
   @override
@@ -17,7 +17,7 @@ class ItemCreateScreen extends StatelessWidget {
         ),
         iconTheme: Theme.of(context).iconTheme,
       ),
-      body: Center(child: CreateFormScreen()),
+      body: Center(child: CreateItemForm()),
     );
   }
 }

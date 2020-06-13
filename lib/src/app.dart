@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:relationship_management/src/ui/screens/home_screen.dart';
-import 'package:relationship_management/src/ui/screens/item_create_screen.dart';
+import 'package:relationship_management/src/ui/screens/create_item_screen.dart';
 import 'package:relationship_management/src/ui/screens/register_screen.dart';
 import 'package:relationship_management/src/ui/screens/signin_screen.dart';
 import 'package:relationship_management/src/ui/screens/welcome.dart';
@@ -84,7 +84,7 @@ class App extends StatelessWidget {
         Welcome.routeName: (_) => Welcome(),
         RegisterScreen.routeName: (_) => RegisterScreen(),
         SignInScreen.routeName: (_) => SignInScreen(),
-        ItemCreateScreen.routeName: (_) => ItemCreateScreen(),
+        CreateItemScreen.routeName: (_) => CreateItemScreen(),
       },
       home: FutureBuilder<FirebaseUser>(
         future: Auth.getCurrentUser(),

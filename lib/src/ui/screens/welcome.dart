@@ -13,6 +13,7 @@ import 'package:relationship_management/src/ui/widgets/loader.dart';
 class Welcome extends StatefulWidget {
   static const String routeName = "/welcome";
 
+
   @override
   _WelcomeState createState() => _WelcomeState();
 }

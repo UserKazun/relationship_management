@@ -11,7 +11,7 @@ import 'package:relationship_management/src/ui/screens/welcome.dart';
 import 'package:relationship_management/src/ui/widgets/items_container.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String home = 'home_screen';
+  static const String routeName = 'home_screen';
   final String uid;
 
   HomeScreen(this.uid);

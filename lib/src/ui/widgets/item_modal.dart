@@ -1,23 +1,31 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:relationship_management/src/controllers/items_controller.dart';
 
 class ItemModal extends StatelessWidget {
   final DocumentSnapshot item;
   ItemModal({@required this.item});
 
+
+
   @override
   Widget build(BuildContext context) {
-    // String displayItemSum = this.item['name'];
-    DateFormat formatter = DateFormat('yyyy/MM/dd');
-    String formattedDateOpened =
-        formatter.format(DateTime.parse(this.item['time'].toDate().toString()));
+
+    double getDeviceWidth() {
+      double deviceWidth;
+      if (MediaQuery.of(context).size.width < 700) {
+        deviceWidth = MediaQuery.of(context).size.width + 100;
+        return deviceWidth;
+      } else {
+        deviceWidth = MediaQuery.of(context).size.width - 100;
+        return deviceWidth;
+      }
+    }
 
     return Center(
       child: Container(
-        height: MediaQuery.of(context).size.height - 260,
+        height: getDeviceWidth(),
         margin: EdgeInsets.only(left: 20, right: 20),
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
@@ -95,6 +103,9 @@ class ItemModal extends StatelessWidget {
                       'assets/images/HandsUp.png'
                     ),
                   ),
+
+                  SizedBox(height: 50),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[

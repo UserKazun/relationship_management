@@ -11,7 +11,6 @@ class ItemModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double getDeviceWidth() {
       double deviceWidth;
       if (MediaQuery.of(context).size.width < 700) {

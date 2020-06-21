@@ -21,7 +21,7 @@ class ItemsInfo extends StatelessWidget {
       height:
         Provider.of<FilterState>(context).filterEnabled || items.length == 0
             ? 125
-            : 100,
+            : 110,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: items.length > 0

@@ -45,6 +45,6 @@ abstract class ItemsController {
   }
 
   static List<DocumentSnapshot>filterAllItems(Iterable<DocumentSnapshot> items) {
-    return items.where((item) => item['uid'] == '').toList();
+    return items.where((item) => item['uid'] != '').toList();
   }
 }

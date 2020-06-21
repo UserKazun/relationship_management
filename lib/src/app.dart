@@ -97,12 +97,9 @@ class App extends StatelessWidget {
             return userSnapshot.hasData
                 ? HomeScreen(userSnapshot.data.uid)
                 : Welcome();
-          } else {
-            return Text(
-                'relationship_management'
-            );
           }
-        },
+          return null;
+        }
       ),
     );
   }

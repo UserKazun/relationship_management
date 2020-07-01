@@ -54,60 +54,57 @@ class ItemModal extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
-                        '趣味',
-                        style: Theme.of(context).textTheme.bodyText2
-                      ),
-                      Text(
-                        '性格',
-                          style: Theme.of(context).textTheme.bodyText2
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 5),
-
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        '${this.item['hobby']}',
-                        style: Theme.of(context).textTheme.bodyText1
-                      ),
-
-                      SizedBox(width: 197),
-
-                      Column(
-                        children: <Widget>[
-                          if (this.item['character'] != '')
+                      Container(
+                        child: Column(
+                          children: <Widget>[
                             Text(
-                              '①${this.item['character']}',
-                              style: Theme.of(context).textTheme.headline5
+                                '趣味',
+                                style: Theme.of(context).textTheme.bodyText2
                             ),
-                          if (this.item['character2'] != '')
                             Text(
-                              '②${this.item['character2']}',
+                                '${this.item['hobby']}',
                                 style: Theme.of(context).textTheme.headline5
-                          ),
-                          if (this.item['character3'] != '')
+                            ),
+
+                            SizedBox(height: 30,),
+
                             Text(
-                              '③${this.item['character3']}',
-                                style: Theme.of(context).textTheme.headline5
-                          ),
-                        ],
+                                '性格',
+                                style: Theme.of(context).textTheme.bodyText2
+                            ),
+                            Column(
+                              children: <Widget>[
+                                if (this.item['character'] != '')
+                                  Text(
+                                      '①${this.item['character']}',
+                                      style: Theme.of(context).textTheme.headline5
+                                  ),
+                                if (this.item['character2'] != '')
+                                  Text(
+                                      '②${this.item['character2']}',
+                                      style: Theme.of(context).textTheme.headline5
+                                  ),
+                                if (this.item['character3'] != '')
+                                  Text(
+                                      '③${this.item['character3']}',
+                                      style: Theme.of(context).textTheme.headline5
+                                  ),
+                              ],
+                            ),
+
+                            SizedBox(height: 130)
+
+                          ],
+                        ),
                       ),
+
                     ],
                   ),
-                  Image(
-                    image: AssetImage(
-                      'assets/images/HandsUp.png'
-                    ),
-                  ),
-
-                  SizedBox(height: 50),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
+                      SizedBox(width: 20),
                       RaisedButton(
                         child: Text(
                             '削除'

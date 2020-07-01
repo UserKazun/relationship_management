@@ -171,6 +171,12 @@ class _CreateItemFormState extends State<CreateItemForm> {
           textCapitalization: TextCapitalization.sentences,
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+          validator: (value) {
+          if (value.length > 10) {
+            return '特徴は10文字以下で入力してください。';
+          }
+          return null;
+        },
         ),
       ),
 
@@ -183,6 +189,12 @@ class _CreateItemFormState extends State<CreateItemForm> {
           textCapitalization: TextCapitalization.sentences,
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+          validator: (value) {
+            if (value.length > 10) {
+              return '特徴は10文字以下で入力してください。';
+            }
+            return null;
+          },
         ),
       ),
 
@@ -195,6 +207,12 @@ class _CreateItemFormState extends State<CreateItemForm> {
           textCapitalization: TextCapitalization.sentences,
           autofocus: true,
           decoration: InputDecoration(prefixIcon: Icon(Icons.face)),
+          validator: (value) {
+            if (value.length > 10) {
+              return '特徴は10文字以下で入力してください。';
+            }
+            return null;
+          },
         ),
       ),
 
@@ -208,7 +226,7 @@ class _CreateItemFormState extends State<CreateItemForm> {
             autofocus: true,
             decoration: InputDecoration(prefixIcon: Icon(Icons.audiotrack)),
             validator: (value) {
-              if (value.length < 2) {
+              if (value.length < 2 || value.length > 8) {
                 return '趣味は最低2文字で入力してください。';
               }
               return null;
